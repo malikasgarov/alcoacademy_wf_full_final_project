@@ -1,12 +1,15 @@
 import "./css/register.css";
+import Header from "./header"
 
-
-function Register() {
+function login() {
     return ( 
-        <h1>
-           a 
-        </h1>
+        <>
+            <Header></Header>
+            <h1>
+                a
+            </h1>
+        </>
      );
 }
 
-export default Register;
+export default login;
