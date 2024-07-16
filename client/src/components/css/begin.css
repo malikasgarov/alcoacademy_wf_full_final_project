@@ -1,0 +1,36 @@
+div.begin{
+    display: flex;
+    margin-top: 71px;
+    align-items: center;
+
+}
+div.beginleft{
+    flex: 2;
+    h1{
+        color: #1D4645;
+        font-size: 72px;
+        margin-bottom: 0;
+        margin-top: 0;
+        
+    }
+    p{
+        color:#3F3F3F;
+        font-size: 25px;
+    }
+    a.register{
+        text-decoration: none;
+        display: inline-block;
+        background-color: #E8C5B0;
+        padding: 12px 24px;
+        color: #1D4645;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+div.beginimg{
+    flex: 3;
+    img{
+        width: 100%;
+    }
+}
