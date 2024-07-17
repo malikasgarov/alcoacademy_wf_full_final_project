@@ -1,6 +1,8 @@
 import Begin from "./begin";
 import Header from "./header";
 import Counters from "./Counters";
+import Howtoplay from "./HowtoPlay";
+import Categories from "./Categories";
 
 function index() {
     return ( 
@@ -8,6 +10,8 @@ function index() {
             <Header />
             <Begin />
             <Counters />
+            <Howtoplay />
+            <Categories />
         </>
      );
 }

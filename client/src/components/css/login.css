@@ -1,22 +1,26 @@
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 
-body, html {
+body,
+html {
     min-height: 100%;
     margin: 0;
 }
 
 .login-bg {
-    background-image: url('http://getwallpapers.com/wallpaper/full/0/4/c/122144.jpg');
+    /* background-image: url('http://getwallpapers.com/wallpaper/full/0/4/c/122144.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;
     height: 100vh;
 }
+.login-bg {
+    /* background: linear-gradient(100deg, #000, grey); */
+  }
 
 .box {
     width: 20rem;
-    height: 20rem;
+    /* height: 20rem; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -38,7 +42,8 @@ body, html {
     text-transform: uppercase;
 }
 
-.box input[type="text"], .box input[type="password"] {
+.box input[type="text"],
+.box input[type="password"] {
     width: 12rem;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 5px;
@@ -64,33 +69,40 @@ body, html {
     background: none;
     color: white;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
-.box input[type="submit"]:hover, .box input[type="submit"]:focus {
+.box input[type="submit"]:hover,
+.box input[type="submit"]:focus {
     background-color: transparent;
     color: aqua;
     transition: 0.2s;
     box-shadow: 0px 0px 20px 3px rgb(0, 255, 224);
 }
 
-.box input[type="text"]:focus, .box input[type="password"]:focus {
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
     border: 2px solid rgb(0, 255, 224);
     box-shadow: 0px 0px 20px 1px rgb(0, 255, 224);
     transition: 0.2s;
 }
 
 @media screen and (max-width: 600px) {
-    .box {
+    /* .box {
         height: 17rem;
         width: 15rem;
-    }
-    .box input[type="text"], .box input[type="password"] {
+    } */
+
+    .box input[type="text"],
+    .box input[type="password"] {
         width: 8rem;
     }
+
     .box input[type="submit"] {
         width: 6rem;
         font-size: 0.61rem;
     }
+
     .box h1 {
         font-size: 1.5rem;
     }
@@ -98,19 +110,23 @@ body, html {
 
 @media screen and (max-width: 320px) {
     .box {
-        height: 18rem;
+        /* height: 18rem; */
         width: 12rem;
     }
-    .box input[type="text"], .box input[type="password"] {
+
+    .box input[type="text"],
+    .box input[type="password"] {
         width: 6rem;
         padding: 0.5rem;
         font-size: 0.63rem;
     }
+
     .box input[type="submit"] {
         width: 5rem;
         height: 2rem;
         font-size: 0.51rem;
     }
+
     .box h1 {
         font-size: 1rem;
     }
@@ -121,43 +137,81 @@ body, html {
         height: 17rem;
         width: 8rem;
     }
-    .box input[type="text"], .box input[type="password"] {
+
+    .box input[type="text"],
+    .box input[type="password"] {
         width: 3.8rem;
         margin-top: 0.2rem;
     }
+
     .box input[type="submit"] {
         width: 3.6rem;
         font-size: 0.29rem;
     }
+
     .box h1 {
         font-size: 1rem;
     }
 }
-.box {
-    transition: 3s all;
+
+/* .box {
+    transition: all 3s;
 }
+
 .box:hover {
-    
     animation: rgb 10s infinite alternate;
 }
 
 @keyframes rgb {
     0% {
+        box-shadow: 0 0 0px #ff0000, 0 0 0px #ff0000, 0 0 0px #ff0000, 0 0 0px #ff0000, 0 0 0px #ff0000, 0 0 0px #ff0000, 0 0 0px #ff0000;
+    }
+
+    10% {
         box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
     }
+
     25% {
         box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00, 0 0 70px #00ff00;
     }
+
     50% {
         box-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff, 0 0 40px #0000ff, 0 0 50px #0000ff, 0 0 60px #0000ff, 0 0 70px #0000ff;
     }
+
     75% {
         box-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00, 0 0 40px #ffff00, 0 0 50px #ffff00, 0 0 60px #ffff00, 0 0 70px #ffff00;
     }
+
     100% {
         box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
     }
+} */
+.box{
+    background: rgba(35,35,35,0.6);
+  border-radius: 20px;
+  transition: 1s;
 }
+.box:hover {
+    background: #232323;
+    box-shadow: 0 0 10px #0f0,
+          0 0 20px #0f0,
+          0 0 30px #0f0,
+          0 0 40px #0f0,
+          0 0 50px #0f0;
+    animation: logobox 5s linear infinite;
+  }
+  
+  @keyframes logobox {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+  
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
 .register-link {
     color: #00ffdd;
     margin-top: 20px;

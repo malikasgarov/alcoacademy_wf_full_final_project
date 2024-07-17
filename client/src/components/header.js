@@ -1,19 +1,44 @@
 import './css/header.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { useState } from 'react';
 
 function Home() {
+    const [dropdownActive, setDropdownActive] = useState(false);
+
+    function toggleDropdown() {
+        setDropdownActive(!dropdownActive);
+    }
+
+    function closeDropdown() {
+        setDropdownActive(false);
+    }
+
     return (
-        <header className='container'>
-            <div className='logo'><i class="fa-solid fa-list-check"></i> Quiz Master</div>
-            <div className='links'>
-                <Link to="/">Home</Link>
-                <HashLink to="/#howtoplay">How to Play</HashLink>
-                <Link to="/categories">Categories</Link>
-                <HashLink to="/#contact">Contact</HashLink>
-                <Link to="/quiz">Quizes</Link>
+        <header>
+            <div className='container head'>
+                <div className='logo'><i className="fa-solid fa-list-check"></i> Quiz Master</div>
+                <div className='links'>
+                    <Link to="/" onClick={closeDropdown}>Home</Link>
+                    <HashLink to="/#howtoplay" onClick={closeDropdown}>How to Play</HashLink>
+                    <Link to="/categories" onClick={closeDropdown}>Categories</Link>
+                    <HashLink to="/#contact" onClick={closeDropdown}>Contact</HashLink>
+                    <Link to="/quiz" onClick={closeDropdown}>Quizzes</Link>
+                </div>
+                <div className='lefticon'>
+                    <Link className='login' to="/login" onClick={closeDropdown}><i className="fa-solid fa-arrow-right-to-bracket"></i> Log in</Link>
+                    <div className='bars' onClick={toggleDropdown}>
+                        <i className="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+                <div className={`dropdown ${dropdownActive ? 'active' : ''}`}>
+                    <Link to="/" onClick={closeDropdown}>Home</Link>
+                    <HashLink to="/#howtoplay" onClick={closeDropdown}>How to Play</HashLink>
+                    <Link to="/categories" onClick={closeDropdown}>Categories</Link>
+                    <HashLink to="/#contact" onClick={closeDropdown}>Contact</HashLink>
+                    <Link to="/quiz" onClick={closeDropdown}>Quizzes</Link>
+                </div>
             </div>
-            <Link className='login' to="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Log in</Link>
         </header>
     );
 }
