@@ -1,0 +1,14 @@
+div.contact{
+    margin-top: 150px;
+    text-align: center;
+    margin-bottom: 160px;
+    h1{
+        font-weight: bold;
+        font-size: 66px;
+        color: #1D4645;
+    }
+}
+div.contact>p{
+    font-size: 18px;
+    color: #1D4645;
+}

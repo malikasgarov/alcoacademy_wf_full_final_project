@@ -21,3 +21,34 @@ div.words{
         color: white;
     }
 }
+div.categories{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+    div.subject{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background-color: #FFF2E6;
+        padding: 32px;
+        div{
+            border-radius: 30%;
+        }
+        h2{
+            margin: 0;
+            color: #1D4645;
+        }
+        div>img {
+            width: 100px;
+            /* height: 100px; */
+            border-radius: 50%;
+        }
+        p{
+            opacity: 0.6;
+        }
+
+    }
+    div.subject1{
+        display: grid;
+    }
+}

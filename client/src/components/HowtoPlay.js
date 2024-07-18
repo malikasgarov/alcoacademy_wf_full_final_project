@@ -2,6 +2,9 @@ import "./css/HowtoPlay.css";
 import logimg from "./img/Screenshot_1.png";
 import logimg1 from "./img/Screenshot_2.png";
 import logimg2 from "./img/Screenshot_3.png";
+import logimg3 from "./img/Screenshot_4.png";
+
+
 function Howtoplay() {
     return (
         <div className="bck">
@@ -37,11 +40,11 @@ function Howtoplay() {
                     </div>
                     <div className="cart">
                         <div className="img" >
-                            <img src="https://placehold.co/250x200"></img>
+                            <img src={logimg3}></img>
                         </div>
                         <div className="word">
                             <h2>Step 4</h2>
-                            <h4>Click on subject </h4>
+                            <h4>Choose subject </h4>
                         </div>
                     </div>
                     <div className="cart">

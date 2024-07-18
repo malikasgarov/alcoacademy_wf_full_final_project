@@ -2,7 +2,7 @@ import './css/header.css';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useState } from 'react';
-
+import logo from "./img/logo.png";
 function Home() {
     const [dropdownActive, setDropdownActive] = useState(false);
 
@@ -17,11 +17,12 @@ function Home() {
     return (
         <header>
             <div className='container head'>
-                <div className='logo'><i className="fa-solid fa-list-check"></i> Quiz Master</div>
+                <div className='logo'>QUIZ MASTER</div>
+                {/* <div className='logo'><img src={logo}></img></div> */}
                 <div className='links'>
                     <Link to="/" onClick={closeDropdown}>Home</Link>
                     <HashLink to="/#howtoplay" onClick={closeDropdown}>How to Play</HashLink>
-                    <Link to="/categories" onClick={closeDropdown}>Categories</Link>
+                    <HashLink to="/#categories" onClick={closeDropdown}>Categories</HashLink>
                     <HashLink to="/#contact" onClick={closeDropdown}>Contact</HashLink>
                     <Link to="/quiz" onClick={closeDropdown}>Quizzes</Link>
                 </div>

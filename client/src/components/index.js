@@ -3,6 +3,9 @@ import Header from "./header";
 import Counters from "./Counters";
 import Howtoplay from "./HowtoPlay";
 import Categories from "./Categories";
+import Contact from "./Contact";
+import Contactform from "./Contactform";
+
 
 function index() {
     return ( 
@@ -12,6 +15,8 @@ function index() {
             <Counters />
             <Howtoplay />
             <Categories />
+            <Contact />
+            <Contactform />
         </>
      );
 }

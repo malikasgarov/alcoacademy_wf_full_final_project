@@ -1,0 +1,142 @@
+div.formbck {
+    background-color: #1D4645;
+
+    footer {
+        padding-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div.footlogo {
+            color: white;
+            display: flex;
+            align-items: center;
+
+            >i {
+                font-size: 27px;
+            }
+        }
+
+        div.footmenu {
+            div.footlinks {
+                display: flex;
+                flex-direction: column;
+                color: white;
+                gap: 8px;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    letter-spacing: 1px;
+                }
+            }
+
+            p {
+                color: #E8C5B0;
+                letter-spacing: 2px;
+            }
+        }
+
+        div.medias {
+            a {
+                color: #E8C5B0;
+
+                i {
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}
+
+.hr {
+    translate: 0 -75px;
+    color: grey;
+}
+
+div.copyrights {
+    background-color: #1D4645;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-bottom: 50px;
+
+    div.terms {
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+div.copyrights>div.opac {
+    opacity: 0.6;
+}
+
+.hr1 {
+    color: grey;
+    margin-top: 10px;
+    margin-bottom: 50px !important;
+}
+
+div.contactform {
+    form {
+        border-radius: 4px;
+        translate: 0px -150px;
+        box-shadow: 68px 38px 80px 0px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 80px;
+        background-color: white;
+        margin: auto;
+
+        textarea {
+            resize: none;
+        }
+
+        label {
+            color: #1D4645;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        input[type="text"] {
+            padding: 8px 16px;
+            border: 1px solid FFFFFF;
+        }
+
+        input[type="submit"] {
+            font-weight: bold;
+            width: 10rem;
+            border: 2px solid #1D4645;
+            border-radius: 8px;
+            text-align: center;
+            margin: auto;
+            padding: 10px;
+            background: none;
+            color: white;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.5s;
+            background-color: #1D4645;
+        }
+
+        input[type="submit"]:hover {
+            color: #1D4645;
+            background-color: white;
+        }
+
+
+    }
+}
+
+
+@media (max-width:768px) {
+    div.contactform {
+        form {
+            width: 100%;
+        }
+    }
+}
