@@ -7,6 +7,7 @@ import Counters from './components/Counters.js';
 import Index from './components/index.js';
 import Register from "./components/register.js";
 import Login from "./components/login.js";
+import Quiz from './components/Quiz.js';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='*' element={<Index />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
+        <Route path='/quiz' element={<Quiz />}></Route>
       </Routes>
     </BrowserRouter>
   );

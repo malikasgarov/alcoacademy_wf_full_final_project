@@ -21,10 +21,10 @@ div.phowtoplay {
         background-color: white;
         display: flex;
         flex-direction: column;
-    }
-    div.word {
-        /* text-align: center; */
-        margin-left: 30px;
+        div.word {
+            text-align: center;
+            /* margin-left: 30px; */
+        }
     }
     div.img {
         flex: 1;
