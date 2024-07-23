@@ -14,8 +14,9 @@ function Home() {
         setDropdownActive(false);
     }
 
+
     return (
-        <header>
+        <header >
             <div className='container head'>
                 <div className='logo'>QUIZ MASTER</div>
                 {/* <div className='logo'><img src={logo}></img></div> */}
@@ -25,9 +26,10 @@ function Home() {
                     <HashLink to="/#categories" onClick={closeDropdown}>Categories</HashLink>
                     <HashLink to="/#contact" onClick={closeDropdown}>Contact</HashLink>
                     <Link to="/quiz" onClick={closeDropdown}>Quizzes</Link>
+                    {/* <Link to="/createquiz" onClick={closeDropdown}>Create Quiz</Link> */}
                 </div>
                 <div className='lefticon'>
-                    <Link className='login' to="/login" onClick={closeDropdown}><i className="fa-solid fa-arrow-right-to-bracket"></i> Log in</Link>
+                    <Link className='login' to="/login" id='login' onClick={closeDropdown}><i className="fa-solid fa-arrow-right-to-bracket"></i> Log in</Link>
                     <div className='bars' onClick={toggleDropdown}>
                         <i className="fa-solid fa-bars"></i>
                     </div>
@@ -38,6 +40,7 @@ function Home() {
                     <Link to="/categories" onClick={closeDropdown}>Categories</Link>
                     <HashLink to="/#contact" onClick={closeDropdown}>Contact</HashLink>
                     <Link to="/quiz" onClick={closeDropdown}>Quizzes</Link>
+                    {/* <Link to="/createquiz" onClick={closeDropdown}>Create Quiz</Link> */}
                 </div>
             </div>
         </header>

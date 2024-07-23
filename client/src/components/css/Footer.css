@@ -1,0 +1,47 @@
+footer {
+    background-color: #1D4645;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div.footlogo {
+        color: white;
+        display: flex;
+        align-items: center;
+
+        >i {
+            font-size: 27px;
+        }
+    }
+
+    div.footmenu {
+        div.footlinks {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            gap: 8px;
+
+            a {
+                text-decoration: none;
+                color: white;
+                letter-spacing: 1px;
+            }
+        }
+
+        p {
+            color: #E8C5B0;
+            letter-spacing: 2px;
+        }
+    }
+
+    div.medias {
+        a {
+            color: #E8C5B0;
+
+            i {
+                font-size: 35px;
+            }
+        }
+    }
+}

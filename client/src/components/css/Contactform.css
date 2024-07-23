@@ -16,7 +16,9 @@ div.formbck {
                 font-size: 27px;
             }
         }
-
+        div.copyright{
+            background-color: #1D4645;
+        }
         div.footmenu {
             div.footlinks {
                 display: flex;

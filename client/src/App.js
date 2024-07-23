@@ -8,6 +8,7 @@ import Index from './components/index.js';
 import Register from "./components/register.js";
 import Login from "./components/login.js";
 import Quiz from './components/Quiz.js';
+import Createquiz from "./components/createquiz";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/quiz' element={<Quiz />}></Route>
+        <Route path='/createquiz' element={<Createquiz />}></Route>
       </Routes>
     </BrowserRouter>
   );

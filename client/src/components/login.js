@@ -1,21 +1,27 @@
-import { Link } from "react-router-dom";
 import "./css/login.css";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "./header";
 import { loginUser } from "../api";
 import { useState } from "react";
+import App from "../App";
+
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const navigate = useNavigate();
     const hadleLogin = async(e)=>{
       e.preventDefault();
       try{
         const data = await loginUser(username, password);
         setMessage("Login Succesfully");
+        localStorage.setItem("token", data.token);
+        navigate("/");
       }catch(error){
         setMessage(error.error)
       }
+      
     }
 
   return (

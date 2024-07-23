@@ -1,21 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./css/register.css";
 import Header from "./header"
 import { registerUser } from "../api";
 import { useState } from "react";
 
+
 function Register() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    let tohome = useNavigate();
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
             const data = await registerUser(username, password);
             setMessage(data.message);
+            tohome("/asd");
         } catch (error) {
             setMessage(error.error)
         }
+        tohome("/asd");
     }
 
     return (
