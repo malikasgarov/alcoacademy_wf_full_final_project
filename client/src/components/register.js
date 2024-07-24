@@ -15,11 +15,11 @@ function Register() {
         try {
             const data = await registerUser(username, password);
             setMessage(data.message);
-            tohome("/asd");
+            tohome("/");
         } catch (error) {
             setMessage(error.error)
         }
-        tohome("/asd");
+        tohome("/");
     }
 
     return (

@@ -21,6 +21,14 @@ div.words{
         color: white;
     }
 }
+@media (max-width:576px) {
+    div.words{
+        flex-direction: column;
+        a{
+            margin-bottom: 30px;
+        }
+    }
+}
 div.categories{
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -50,5 +58,10 @@ div.categories{
     }
     div.subject1{
         display: grid;
+    }
+}
+@media (max-width:576px) {
+    div.categories{
+        grid-template-columns: repeat(1, auto);
     }
 }

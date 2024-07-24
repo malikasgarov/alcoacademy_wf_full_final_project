@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { useState } from 'react';
 import logo from "./img/logo.png";
+import { useEffect } from 'react';
+import { loginUser } from "../api";
+import axios from "axios";
+
+
 function Home() {
     const [dropdownActive, setDropdownActive] = useState(false);
 
@@ -13,6 +18,35 @@ function Home() {
     function closeDropdown() {
         setDropdownActive(false);
     }
+    function logout() {
+        setDropdownActive(false);
+        localStorage.removeItem("token");
+        localStorage.removeItem("username");
+        let login = document.getElementById("login")
+        let logout = document.getElementById("logout");
+        login.style.display = "block";
+        logout.style.display = "none";
+    }
+
+    useEffect(() => {
+        let token = getItems("token");
+        let name = JSON.parse(localStorage.getItem("username"));
+        let login = document.getElementById('login');
+        let logout = document.getElementById("logout");
+        if (token) {
+            console.log("sa");
+            if (login) {
+                logout.style.display = "block";
+                login.style.display = 'none';
+            } else {
+                console.error("Element with ID 'login' not found");
+            }
+        }
+        if (name) {
+            logout.innerHTML = `<i class="fa-solid fa-arrow-right-to-bracket"></i> ${name}`;
+        }
+
+    }, []);
 
 
     return (
@@ -30,6 +64,8 @@ function Home() {
                 </div>
                 <div className='lefticon'>
                     <Link className='login' to="/login" id='login' onClick={closeDropdown}><i className="fa-solid fa-arrow-right-to-bracket"></i> Log in</Link>
+                    <Link className='logout' onClick={logout} id='logout'><i className="fa-solid fa-arrow-right-to-bracket"></i> Log out</Link>
+                    <div className='login' id='logindiv'></div>
                     <div className='bars' onClick={toggleDropdown}>
                         <i className="fa-solid fa-bars"></i>
                     </div>
@@ -45,6 +81,9 @@ function Home() {
             </div>
         </header>
     );
+}
+function getItems(e) {
+    return localStorage.getItem(`${e}`) || false;
 }
 
 export default Home;

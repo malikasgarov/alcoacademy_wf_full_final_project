@@ -34,3 +34,9 @@ div.beginimg{
         width: 100%;
     }
 }
+@media (max-width:768px) {
+    div.begin{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}

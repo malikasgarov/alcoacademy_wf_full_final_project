@@ -36,3 +36,8 @@ div.phowtoplay {
         }
     }
 }
+@media (max-width:768px) {
+    div.howtoplay{
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}

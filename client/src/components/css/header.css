@@ -44,8 +44,22 @@ div.head {
         transition: 0.5s all;
         text-decoration: none;
     }
+    a.logout{
+        display: none;
+        color: #1D4645;
+        background-color: white;
+        border: 1px solid #1D4645;
+        border-radius: 4px;
+        padding: 8px 16px;
+        transition: 0.5s all;
+        text-decoration: none;
+    }
 
     a.login:hover {
+        background-color: #1D4645;
+        color: white;
+    }
+    a.logout:hover {
         background-color: #1D4645;
         color: white;
     }

@@ -4,6 +4,7 @@ import "./css/Quiz.css";
 import Footer from "./Footer"
 import Header from "./header";
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 // const quiz = [
 //     {
 //         question: quizzes.question,
@@ -13,19 +14,23 @@ import { Link } from "react-router-dom";
 // ]
 function Quiz() {
     const [quizzes, setQuizzes] = useState([]);
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         async function fetchQuizzes() {
+            setLoading(true);
             try {
                 const data = await getQuizzes();
-                console.log(data);  // Log data to verify it's being fetched
                 setQuizzes(data);
             } catch (error) {
                 console.error("Failed to fetch quizzes", error);
             }
+            setLoading(false);
         }
-
+       
         fetchQuizzes();
+        
     }, []);
 
     return (
@@ -44,7 +49,7 @@ function Quiz() {
                 </div>
             </div>
             <div className="quizholder container">
-                        {quizzes.map((quiz, index) => (
+                        {loading ? <Loading /> : quizzes.map((quiz, index) => (
                             <Link key={quiz._id} className="quiz" to={quiz._id}>
                                 <h3>{quiz.question}</h3>
                             </Link>
