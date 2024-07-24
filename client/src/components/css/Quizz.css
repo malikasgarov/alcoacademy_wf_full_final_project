@@ -1,0 +1,26 @@
+div.quiz-container{
+    margin-top: 70px;
+    form.quizz{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        h1{
+            text-align: center;
+        }
+        div.options{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+        }
+        button{
+            border: 1px solid #1D4645;
+            background-color: white;
+            color: #1D4645;
+            text-align: center;
+        }
+        button:hover{
+            color: white;
+            background-color: #1D4645;
+
+        }
+    } 
+}

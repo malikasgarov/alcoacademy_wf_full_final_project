@@ -1,7 +1,7 @@
 import { getQuizzes } from "../api";
 import { useState, useEffect } from "react";
 import "./css/Quiz.css";
-import Footer from "./Footer"
+import Footer from "./Footer";
 import Header from "./header";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
