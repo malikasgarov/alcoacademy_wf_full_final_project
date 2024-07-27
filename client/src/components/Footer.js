@@ -20,7 +20,6 @@ function Footer() {
                         <HashLink to="/#howtoplay" >How to Play</HashLink>
                         <HashLink to="/#categories" >Categories</HashLink>
                         <HashLink to="/#contact" >Contact</HashLink>
-                        <Link to="/quiz">Quizzes</Link>
                     </div>
                 </div>
                 <div className="medias">

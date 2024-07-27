@@ -52,4 +52,62 @@ export const getQuizzes = async () => {
         throw error.response.data;
     }
 };
+export const getUsersLength = async () => {
+    try {
+        const response = await api.get('/userslength');
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+export const getQuizzesLength = async () => {
+    try {
+        const response = await api.get('/quizzeslength');
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+export const getResults = async () => {
+    try {
+        const response = await api.get('/getresults');
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+export const postResults = async () => {
+    try {
+        const response = await api.post('/postresults', {result});
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+
+export const getMath = async () => {
+    try {
+        const response = await api.get('/math');
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+export const getHTML = async () => {
+    try {
+        const response = await api.get('/history');
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+export const getHistory = async () => {
+    try {
+        const response = await api.get('/history');
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+
 

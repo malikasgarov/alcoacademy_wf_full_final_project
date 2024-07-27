@@ -1,3 +1,4 @@
+
 header {
     position: fixed;
     top: 0;
@@ -72,12 +73,10 @@ div.head {
 div.dropdown.active {
     display: block;
     position: absolute;
-    top: 56px;
-    right: 0;
+    top: 59px;
     background-color: white;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    width: 100%;
 }
 
 div.dropdown a {
@@ -90,16 +89,18 @@ div.dropdown a {
 div.dropdown a:hover {
     background-color: #ddd;
 }
-div.logo i{
+a.logo i{
     font-size: 26px;
 }
-div.logo img{
+a.logo img{
     width: 20px;
 }
-div.logo{
+a.logo{
     user-select: none;
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: black;
     gap: 8px;
     letter-spacing: 3px;
 }

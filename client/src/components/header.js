@@ -34,7 +34,6 @@ function Home() {
         let login = document.getElementById('login');
         let logout = document.getElementById("logout");
         if (token) {
-            console.log("sa");
             if (login) {
                 logout.style.display = "block";
                 login.style.display = 'none';
@@ -50,16 +49,16 @@ function Home() {
 
 
     return (
-        <header >
+        <header>
             <div className='container head'>
-                <div className='logo'>QUIZ MASTER</div>
+                <HashLink to="/#begin" className='logo' onClick={closeDropdown}>QUIZ MASTER</HashLink>
                 {/* <div className='logo'><img src={logo}></img></div> */}
                 <div className='links'>
-                    <Link to="/" onClick={closeDropdown}>Home</Link>
+                    {/* <Link to="/" onClick={closeDropdown}>Home</Link> */}
                     <HashLink to="/#howtoplay" onClick={closeDropdown}>How to Play</HashLink>
                     <HashLink to="/#categories" onClick={closeDropdown}>Categories</HashLink>
                     <HashLink to="/#contact" onClick={closeDropdown}>Contact</HashLink>
-                    <Link to="/quiz" onClick={closeDropdown}>Quizzes</Link>
+                    {/* <Link to="/quiz" onClick={closeDropdown}>Quizzes</Link> */}
                     {/* <Link to="/createquiz" onClick={closeDropdown}>Create Quiz</Link> */}
                 </div>
                 <div className='lefticon'>
@@ -70,13 +69,10 @@ function Home() {
                         <i className="fa-solid fa-bars"></i>
                     </div>
                 </div>
-                <div className={`dropdown ${dropdownActive ? 'active' : ''}`}>
-                    <Link to="/" onClick={closeDropdown}>Home</Link>
+                <div className={`dropdown ${dropdownActive ? 'active' : ''} container`}>
                     <HashLink to="/#howtoplay" onClick={closeDropdown}>How to Play</HashLink>
-                    <Link to="/categories" onClick={closeDropdown}>Categories</Link>
+                    <HashLink to="/#categories" onClick={closeDropdown}>Categories</HashLink>
                     <HashLink to="/#contact" onClick={closeDropdown}>Contact</HashLink>
-                    <Link to="/quiz" onClick={closeDropdown}>Quizzes</Link>
-                    {/* <Link to="/createquiz" onClick={closeDropdown}>Create Quiz</Link> */}
                 </div>
             </div>
         </header>

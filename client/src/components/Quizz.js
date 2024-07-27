@@ -25,7 +25,7 @@ function Quizz() {
         }
 
         fetchQuizzes();
-    }, [id]);
+    }, []);
 
     return (
         <>

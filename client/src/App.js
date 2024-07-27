@@ -7,9 +7,8 @@ import Counters from './components/Counters.js';
 import Index from './components/index.js';
 import Register from "./components/register.js";
 import Login from "./components/login.js";
-import Quiz from './components/Quiz.js';
-import Createquiz from "./components/createquiz";
-import Quizz from './components/Quizz.js';
+import Math from "./components/Math.js";
+import Results from './components/Results.js';
 
 function App() {
   return (
@@ -19,10 +18,8 @@ function App() {
         <Route path='*' element={<Index />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
-        <Route path='/quiz' element={<Quiz />}></Route>
-        <Route path='/createquiz' element={<Createquiz />}></Route>
-        <Route path='/quiz/:id' element={<Quizz />}></Route>
-        
+        <Route path='math' element={<Math />}></Route>
+        <Route path='/results/:id' element={<Results />}></Route>
       </Routes>
     </BrowserRouter>
   );

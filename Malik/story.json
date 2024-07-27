@@ -1,0 +1,256 @@
+{
+    "title": "World History Quiz",
+    "questions": [
+      {
+        "question": "Who was the first President of the United States?",
+        "choices": [
+          "Thomas Jefferson",
+          "Abraham Lincoln",
+          "George Washington",
+          "John Adams"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What was the primary cause of World War I?",
+        "choices": [
+          "Assassination of Archduke Franz Ferdinand",
+          "Invasion of Poland",
+          "Treaty of Versailles",
+          "Rise of Fascism"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "In which year did the Titanic sink?",
+        "choices": [
+          "1905",
+          "1912",
+          "1915",
+          "1920"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "Who was the first person to step on the moon?",
+        "choices": [
+          "Buzz Aldrin",
+          "Yuri Gagarin",
+          "Neil Armstrong",
+          "Michael Collins"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What was the ancient Egyptian writing system called?",
+        "choices": [
+          "Cuneiform",
+          "Hieroglyphics",
+          "Latin",
+          "Phoenician"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "Who was known as the 'Mad Monk' of Russia?",
+        "choices": [
+          "Vladimir Lenin",
+          "Ivan the Terrible",
+          "Rasputin",
+          "Joseph Stalin"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Which civilization built Machu Picchu?",
+        "choices": [
+          "Aztec",
+          "Maya",
+          "Inca",
+          "Olmec"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What was the name of the ship that brought the Pilgrims to America in 1620?",
+        "choices": [
+          "Santa Maria",
+          "Mayflower",
+          "Pinta",
+          "Nina"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "Who was the famous British Prime Minister during World War II?",
+        "choices": [
+          "Winston Churchill",
+          "Neville Chamberlain",
+          "Clement Attlee",
+          "David Lloyd George"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "What was the Berlin Wall a symbol of?",
+        "choices": [
+          "Colonialism",
+          "Cold War",
+          "Industrial Revolution",
+          "World War II"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "Who discovered penicillin?",
+        "choices": [
+          "Marie Curie",
+          "Albert Einstein",
+          "Alexander Fleming",
+          "Louis Pasteur"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Who was the first emperor of Rome?",
+        "choices": [
+          "Julius Caesar",
+          "Augustus",
+          "Nero",
+          "Caligula"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "What was the Renaissance a rebirth of?",
+        "choices": [
+          "Science",
+          "Art and Learning",
+          "Religion",
+          "Politics"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "What major event led the United States to enter World War II?",
+        "choices": [
+          "Invasion of Poland",
+          "Fall of France",
+          "Attack on Pearl Harbor",
+          "Battle of Britain"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Who wrote the 'I Have a Dream' speech?",
+        "choices": [
+          "Malcolm X",
+          "Nelson Mandela",
+          "Martin Luther King Jr.",
+          "Rosa Parks"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Which empire was known for its road system and aqueducts?",
+        "choices": [
+          "Egyptian",
+          "Roman",
+          "Greek",
+          "Persian"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "What was the name of the last queen of France before the French Revolution?",
+        "choices": [
+          "Marie Antoinette",
+          "Catherine de' Medici",
+          "Anne of Austria",
+          "Joan of Arc"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "What was the primary purpose of the Great Wall of China?",
+        "choices": [
+          "Trade",
+          "Agriculture",
+          "Defense",
+          "Transportation"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Who was the leader of the Soviet Union during the Cuban Missile Crisis?",
+        "choices": [
+          "Joseph Stalin",
+          "Nikita Khrushchev",
+          "Leonid Brezhnev",
+          "Mikhail Gorbachev"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "What was the name of the ship that Charles Darwin sailed on for his voyage?",
+        "choices": [
+          "Endeavour",
+          "Discovery",
+          "Beagle",
+          "Victory"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Which country was split into two parts by the 38th parallel after World War II?",
+        "choices": [
+          "Germany",
+          "Vietnam",
+          "Korea",
+          "China"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Who was the famous nurse during the Crimean War?",
+        "choices": [
+          "Clara Barton",
+          "Florence Nightingale",
+          "Mary Seacole",
+          "Edith Cavell"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "Which philosopher is known for the quote 'I think, therefore I am'?",
+        "choices": [
+          "Plato",
+          "Aristotle",
+          "René Descartes",
+          "Socrates"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What ancient civilization built the pyramids?",
+        "choices": [
+          "Greek",
+          "Roman",
+          "Egyptian",
+          "Mesopotamian"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What was the name of the first artificial Earth satellite?",
+        "choices": [
+          "Apollo 11",
+          "Sputnik",
+          "Voyager",
+          "Luna"
+        ],
+        "correctAnswer": 1
+      }
+    ]
+  }
+  

@@ -5,7 +5,6 @@ import { loginUser } from "../api";
 import { useState } from "react";
 import App from "../App";
 
-
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

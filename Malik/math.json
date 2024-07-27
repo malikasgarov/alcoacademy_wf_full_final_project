@@ -1,0 +1,256 @@
+{
+    "title": "Math Quiz",
+    "questions": [
+      {
+        "question": "What is the value of π (pi) approximately?",
+        "choices": [
+          "3.14",
+          "3.41",
+          "2.14",
+          "2.41"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "What is the result of 8 + 6?",
+        "choices": [
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What is the square root of 64?",
+        "choices": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What is 5! (5 factorial)?",
+        "choices": [
+          "60",
+          "100",
+          "120",
+          "150"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Solve for x: 2x + 3 = 11",
+        "choices": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What is the area of a circle with radius 7?",
+        "choices": [
+          "49π",
+          "14π",
+          "7π",
+          "21π"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "What is the derivative of x^2?",
+        "choices": [
+          "2x",
+          "x",
+          "2x^2",
+          "1"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "What is 15% of 200?",
+        "choices": [
+          "20",
+          "25",
+          "30",
+          "35"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "If a triangle has sides of 3, 4, and 5, what kind of triangle is it?",
+        "choices": [
+          "Equilateral",
+          "Isosceles",
+          "Scalene",
+          "Right"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "question": "What is the value of 2^5?",
+        "choices": [
+          "16",
+          "32",
+          "64",
+          "128"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "What is the sum of the interior angles of a triangle?",
+        "choices": [
+          "90 degrees",
+          "180 degrees",
+          "270 degrees",
+          "360 degrees"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "What is the next prime number after 7?",
+        "choices": [
+          "9",
+          "10",
+          "11",
+          "13"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What is 9 x 9?",
+        "choices": [
+          "72",
+          "81",
+          "90",
+          "99"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "What is the equation of a line in slope-intercept form?",
+        "choices": [
+          "y = mx + b",
+          "y = m + b",
+          "x = my + b",
+          "y = x + b"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "What is the value of cos(0)?",
+        "choices": [
+          "0",
+          "1",
+          "-1",
+          "Undefined"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "Solve for y: 3y - 6 = 9",
+        "choices": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "question": "What is the perimeter of a square with side length 5?",
+        "choices": [
+          "10",
+          "15",
+          "20",
+          "25"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What is the result of 7 - 3?",
+        "choices": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "What is the greatest common divisor of 12 and 15?",
+        "choices": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What is the least common multiple of 4 and 5?",
+        "choices": [
+          "10",
+          "15",
+          "20",
+          "25"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What is the result of 2^3?",
+        "choices": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "If f(x) = 2x + 3, what is f(2)?",
+        "choices": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "question": "What is the volume of a cube with side length 3?",
+        "choices": [
+          "9",
+          "18",
+          "27",
+          "36"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What is the solution to the equation x^2 = 16?",
+        "choices": [
+          "x = 4",
+          "x = -4",
+          "x = 4 or x = -4",
+          "x = 0"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "question": "What is the slope of the line passing through the points (2, 3) and (4, 7)?",
+        "choices": [
+          "2",
+          "2.5",
+          "3",
+          "1.5"
+        ],
+        "correctAnswer": 0
+      }
+    ]
+  }
+  

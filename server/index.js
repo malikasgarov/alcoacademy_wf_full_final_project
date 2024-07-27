@@ -23,18 +23,27 @@ const userSchema = new mongoose.Schema({
     password: String,
 });
 
+const resultsSchema = new mongoose.Schema({
+    username:String,
+    result: String,
+});
+
 const quizSchema = new mongoose.Schema({
-    question: String,
-    A: String,
-    B: String,
-    C: String,
-    D: String,
-    answer: String,
-}, { collection: 'quizzes' });
+    title: String,
+    question: Array,
+});
+
+const mathSchema = new mongoose.Schema({
+    title: String,
+    questions: Array,
+}, { collection: 'math' });
 
 const User = mongoose.model("User", userSchema);
 const Quiz = mongoose.model("quizzes", quizSchema);
+const Math = mongoose.model("math", mathSchema);
+const Results = mongoose.model("results", resultsSchema);
 
+// ----------------- R E G I S T E R & L O G I N ------------------- \\
 
 app.post("/api/register", async (req, res) => {
     const { username, password } = req.body;
@@ -43,9 +52,9 @@ app.post("/api/register", async (req, res) => {
     try {
         const newUser = new User({ username, password: hashedPassword });
         await newUser.save();
-        res.status(400).json({ message: "User Registered Succefully" });
+        res.status(201).json({ message: "User Registered Succefully" });
     } catch (err) {
-        res.status(201).json({ err: "User Already Exists" });
+        res.status(400).json({ err: "User Already Exists" });
     }
 })
 
@@ -61,7 +70,10 @@ app.post("/api/login", async (req, res) => {
     }
     const token = jwt.sign({ id: user._id }, "RANDOMPASSWORDFORJWTSECRETKEY");
     res.json({ token });
-})
+});
+
+
+// ----------------- / R E G I S T E R & L O G I N \------------------- \\
 
 app.get("/api/quizzes", async (req, res) => {
     try {
@@ -72,8 +84,81 @@ app.get("/api/quizzes", async (req, res) => {
     }
 });
 
+//------------------- R E S U L T S ----------------------\\
+app.get("/api/getresults", async (req, res) => {
+    try {
+        const results = await Results.find();
+        res.json(results);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch quizzes" });
+    }
+});
+app.post("/api/postresults", async (req, res) => {
+    const { result } = req.body;
+    try {
+        const result = new Results({result});
+        await result.save();
+        res.status(400).json({ message: "User Registered Succefully" });
+    } catch (err) {
+        res.status(201).json({ err: "User Already Exists" });
+    }
+})
+//------------------- / R E S U L T S \ ----------------------\\
+
+// ------------------ L E N G H T ----------------------- \\
+
+app.get("/api/userslength", async (req, res) => {
+    try {
+        const users = await User.find();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch quizzes" });
+    }
+});
+app.get("/api/quizzeslength", async (req, res) => {
+    try {
+        const quizzes = await Quiz.find();
+        res.json(quizzes);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch quizzes" });
+    }
+});
+
+// ------------------ / L E N G H T \ ----------------------- \\
+
+// ------------------ Q U I Z Z E S --------------------- \\
+
+app.get("/api/math", async (req, res) => {
+    try {
+        const quizzes = await Math.find();
+        res.json(quizzes);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch quizzes" });
+    }
+});
+app.get("/api/html", async (req, res) => {
+    try {
+        const quizzes = await Math.find();
+        res.json(quizzes);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch quizzes" });
+    }
+});
+app.get("/api/history", async (req, res) => {
+    try {
+        const quizzes = await Math.find();
+        res.json(quizzes);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch quizzes" });
+    }
+});
+
+// ------------------ / Q U I Z Z E S \ --------------------- \\
+
+// ------------------  L I S T E N  ------------------ \\
 
 app.listen(port, () => {
     console.log("Server running");
 });
 
+// ------------------ / L I S T E N \ ------------------ \\

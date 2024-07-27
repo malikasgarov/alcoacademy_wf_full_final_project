@@ -1,0 +1,75 @@
+body {
+    height: 100vh;
+}
+
+div.Math {
+    margin-top: 70px;
+    position: relative;
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 100vh; */
+    padding: 20px;
+}
+div.question{
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 32px;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+.mathquiz,
+.results {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.question ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.question li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.question li:hover {
+    background-color: #f0f0f0;
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+.navigation button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.navigation button:disabled {
+    background-color: #ccc;
+}
+
+.navigation button:hover:not(:disabled) {
+    background-color: #0056b3;
+}

@@ -1,0 +1,256 @@
+{
+    "title": "HTML Quiz",
+    "questions": [
+      {
+        "question": "What does HTML stand for?",
+        "choices": [
+          "Hyper Text Markup Language",
+          "Hyperlinks and Text Markup Language",
+          "Home Tool Markup Language",
+          "Hyperlinking Text Markup Language"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "Who is making the Web standards?",
+        "choices": [
+          "Google",
+          "Microsoft",
+          "Mozilla",
+          "The World Wide Web Consortium"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "question": "Choose the correct HTML element for the largest heading:",
+        "choices": [
+          "<heading>",
+          "<h6>",
+          "<h1>",
+          "<head>"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What is the correct HTML element for inserting a line break?",
+        "choices": [
+          "<break>",
+          "<br>",
+          "<lb>",
+          "<linebreak>"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "What is the correct HTML for adding a background color?",
+        "choices": [
+          "<body bg='yellow'>",
+          "<background>yellow</background>",
+          "<body style='background-color:yellow;'>",
+          "<bgcolor>yellow</bgcolor>"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Choose the correct HTML element to define important text",
+        "choices": [
+          "<important>",
+          "<b>",
+          "<strong>",
+          "<i>"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Choose the correct HTML element to define emphasized text",
+        "choices": [
+          "<italic>",
+          "<em>",
+          "<i>",
+          "<strong>"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "Which character is used to indicate an end tag?",
+        "choices": [
+          "*",
+          "/",
+          "<",
+          "^"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "How can you make a numbered list?",
+        "choices": [
+          "<dl>",
+          "<ul>",
+          "<list>",
+          "<ol>"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "question": "How can you make a bulleted list?",
+        "choices": [
+          "<dl>",
+          "<ol>",
+          "<list>",
+          "<ul>"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "question": "What is the correct HTML for making a checkbox?",
+        "choices": [
+          "<input type='check'>",
+          "<checkbox>",
+          "<input type='checkbox'>",
+          "<check>"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "What is the correct HTML for making a text input field?",
+        "choices": [
+          "<textinput type='text'>",
+          "<input type='textfield'>",
+          "<textfield>",
+          "<input type='text'>"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "question": "What is the correct HTML for making a drop-down list?",
+        "choices": [
+          "<select>",
+          "<input type='dropdown'>",
+          "<list>",
+          "<input type='list'>"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "What is the correct HTML for making a text area?",
+        "choices": [
+          "<textarea>",
+          "<input type='textarea'>",
+          "<textinput>",
+          "<input type='text'>"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "What is the correct HTML for inserting an image?",
+        "choices": [
+          "<img alt='image'>",
+          "<img src='image.jpg'>",
+          "<image src='image.jpg'>",
+          "<img href='image.jpg'>"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "What is the correct HTML for inserting a hyperlink?",
+        "choices": [
+          "<a href='http://www.example.com'>Example</a>",
+          "<a name='http://www.example.com'>Example</a>",
+          "<a url='http://www.example.com'>Example</a>",
+          "<link href='http://www.example.com'>Example</link>"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "Which HTML element defines the title of a document?",
+        "choices": [
+          "<title>",
+          "<head>",
+          "<meta>",
+          "<document>"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+        "choices": [
+          "title",
+          "src",
+          "alt",
+          "longdesc"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": "Which doctype is correct for HTML5?",
+        "choices": [
+          "<!DOCTYPE html>",
+          "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN' 'http://www.w3.org/TR/html4/strict.dtd'>",
+          "<!DOCTYPE HTML PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>",
+          "<!DOCTYPE html SYSTEM 'about:legacy-compat'>"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "Which HTML element is used to specify a footer for a document or section?",
+        "choices": [
+          "<bottom>",
+          "<footer>",
+          "<section>",
+          "<foot>"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "In HTML, how can you make a text bold?",
+        "choices": [
+          "<bold>",
+          "<strong>",
+          "<b>",
+          "Both <strong> and <b>"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "question": "In HTML, how can you make a text italic?",
+        "choices": [
+          "<italic>",
+          "<i>",
+          "<em>",
+          "Both <i> and <em>"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "question": "Which HTML element is used to define navigation links?",
+        "choices": [
+          "<navigation>",
+          "<nav>",
+          "<navbar>",
+          "<navigate>"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "Which HTML element is used to specify a section of a document?",
+        "choices": [
+          "<section>",
+          "<sec>",
+          "<div>",
+          "<article>"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "question": "What is the correct HTML for creating a table?",
+        "choices": [
+          "<table><tr><td></td></tr></table>",
+          "<table><tr><th></th></tr></table>",
+          "<table><row><column></column></row></table>",
+          "<table><tr><td></td></td></table>"
+        ],
+        "correctAnswer": 0
+      }
+    ]
+  }
+  
