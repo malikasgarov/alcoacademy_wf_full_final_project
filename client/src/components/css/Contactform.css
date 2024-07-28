@@ -16,9 +16,11 @@ div.formbck {
                 font-size: 27px;
             }
         }
-        div.copyright{
+
+        div.copyright {
             background-color: #1D4645;
         }
+
         div.footmenu {
             div.footlinks {
                 display: flex;
@@ -64,9 +66,14 @@ div.copyrights {
     padding-bottom: 50px;
 
     div.terms {
-        a {
-            color: white;
-            text-decoration: none;
+        div {
+            user-select: none;
+            display: flex;
+            i {
+                color: white;
+                letter-spacing: 1px;
+                user-select: none;
+            }
         }
     }
 }

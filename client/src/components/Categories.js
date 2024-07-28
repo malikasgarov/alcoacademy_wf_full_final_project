@@ -23,11 +23,11 @@ function Categories() {
 
     return (
         <>
-            <div className="words container">
+            <div className="words container" id="categories">
                 <h1>Explore Our Quiz Categories</h1>
                 {/* <Link to="/exploreall">EXPLORE ALL</Link> */}
             </div>
-            <div className="categories container" id="categories">
+            <div className="categories container">
                 <Link to="/math" className="subject" onClick={Check}>
                     <div>
                         <img src={Math} alt="Math"></img>

@@ -29,10 +29,10 @@ function Footer() {
             <hr className="container hr1"></hr>
             <div className="copyrights container">
                 <div className="opac">Copyright &copy; 2024 Quiz Master. All Rights Reserved.</div>
-                <div className="terms">
+                {/* <div className="terms">
                     <Link to="/privacypolicy">Privacy Policy</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <Link to="/termsofuse">Terms of Use</Link>
-                </div>
+                </div> */}
             </div>
         </div>
     );

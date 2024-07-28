@@ -33,6 +33,7 @@ function Home() {
         let name = JSON.parse(localStorage.getItem("username"));
         let login = document.getElementById('login');
         let logout = document.getElementById("logout");
+        let register = document.getElementById("register");
         if (token) {
             if (login) {
                 logout.style.display = "block";

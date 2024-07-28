@@ -36,7 +36,6 @@ div.beginimg{
 }
 @media (max-width:768px) {
     div.begin{
-        flex-direction: column;
-        flex-wrap: wrap;
+        flex-direction: column-reverse;
     }
 }

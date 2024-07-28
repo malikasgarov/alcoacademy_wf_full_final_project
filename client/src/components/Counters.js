@@ -16,7 +16,7 @@ function Counters() {
         }
         setInterval(()=>{
             fetchLength();
-        }, 3500)
+        }, 3000)
     }, []);
 
 
@@ -28,7 +28,7 @@ function Counters() {
             </div>
             <div className="number">
                 <h2>NUMBER OF QUIZES</h2>
-                <div className="quizzeslength">75</div>
+                <div className="quizzeslength">100</div>
             </div>
         </div>
     );
