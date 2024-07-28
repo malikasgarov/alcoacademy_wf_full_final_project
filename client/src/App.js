@@ -12,6 +12,7 @@ import Results from './components/Results.js';
 import Programming from "./components/Programming.js";
 import History from "./components/History.js"
 import Resultsforusername from './components/Resultsforusername.js';
+import English from "./components/English.js";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/result/:id' element={<Results />}></Route>
         <Route path='/programming' element={<Programming />}></Route>
         <Route path='/history' element={<History />}></Route>
+        <Route path='/english' element={<English />}></Route>
         <Route path='/resultsforusername/:namee' element={<Resultsforusername />}></Route>
       </Routes>
     </BrowserRouter>

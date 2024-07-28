@@ -16,7 +16,7 @@ function Counters() {
         }
         setInterval(()=>{
             fetchLength();
-        }, 3000)
+        }, 3500)
     }, []);
 
 

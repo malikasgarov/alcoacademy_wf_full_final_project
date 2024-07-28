@@ -36,6 +36,10 @@ div.question{
     list-style-type: none;
     padding-left: 0;
 }
+.question li.selected {
+    background-color: #bec1c4;
+    border: 1px solid rgb(66, 59, 59);
+}
 
 .question li {
     background-color: #fff;
@@ -48,7 +52,7 @@ div.question{
 }
 
 .question li:hover {
-    background-color: #f0f0f0;
+    background-color: #cecaca;
 }
 
 .navigation {

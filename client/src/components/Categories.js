@@ -49,6 +49,13 @@ function Categories() {
                     <h2>History</h2>
                     <p>History reveals the stories of our past and shapes our understanding of the present.</p>
                 </Link>
+                <Link to="/english" className="subject" onClick={Check}>
+                    <div>
+                        <img src={English} alt="History"></img>
+                    </div>
+                    <h2>English</h2>
+                    <p>History reveals the stories of our past and shapes our understanding of the present.</p>
+                </Link>
             </div>
         </>
     );

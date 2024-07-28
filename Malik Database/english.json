@@ -1,0 +1,131 @@
+{
+  "title": "English Language Quiz",
+  "category": "English",
+  "questions": [
+    {
+      "question": "What is the capital of the UK?",
+      "choices": ["London", "Paris", "Berlin", "Madrid"],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What is the synonym of 'happy'?",
+      "choices": ["sad", "joyful", "angry", "tired"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which word means 'to make something less severe'?",
+      "choices": ["aggravate", "mitigate", "complicate", "intensify"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is the antonym of 'difficult'?",
+      "choices": ["easy", "hard", "complex", "challenging"],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which is the correct past tense of 'go'?",
+      "choices": ["goes", "went", "going", "gone"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What does 'benevolent' mean?",
+      "choices": ["kind", "mean", "angry", "neutral"],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which word is a noun?",
+      "choices": ["run", "quickly", "happiness", "beautiful"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What is the plural form of 'mouse'?",
+      "choices": ["mouses", "mice", "mice", "mouse"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is the opposite of 'shy'?",
+      "choices": ["timid", "brave", "bashful", "introverted"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which word means 'to make a decision'?",
+      "choices": ["resolve", "hesitate", "doubt", "procrastinate"],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What is the correct form of 'to be' for 'he'?",
+      "choices": ["am", "is", "are", "be"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which word is an adjective?",
+      "choices": ["happiness", "running", "blue", "loudly"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What does 'diligent' mean?",
+      "choices": ["lazy", "careful", "disorganized", "irresponsible"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which sentence is correct?",
+      "choices": ["She don't like coffee.", "She doesn't like coffee.", "She not like coffee.", "She likesn't coffee."],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is the past tense of 'eat'?",
+      "choices": ["ate", "eaten", "eats", "eating"],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which word means 'able to read and write'?",
+      "choices": ["illiterate", "literate", "inarticulate", "illogical"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is the plural form of 'foot'?",
+      "choices": ["foots", "feet", "footes", "feets"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which word is a verb?",
+      "choices": ["quick", "happiness", "run", "beauty"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What does 'hostile' mean?",
+      "choices": ["friendly", "angry", "calm", "peaceful"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which word means 'to give an opinion'?",
+      "choices": ["suggest", "ignore", "forget", "neglect"],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What is the correct form of 'to have' for 'they'?",
+      "choices": ["has", "have", "had", "having"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which sentence is in passive voice?",
+      "choices": ["The chef cooked the meal.", "The meal was cooked by the chef.", "The chef was cooking the meal.", "The meal cooks the chef."],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What does 'intricate' mean?",
+      "choices": ["simple", "complicated", "easy", "plain"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is the correct plural of 'mouse'?",
+      "choices": ["mouses", "mice", "mice", "mouses"],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which word means 'to learn or understand something'?",
+      "choices": ["comprehend", "forget", "ignore", "disregard"],
+      "correctAnswer": 0
+    }
+  ]
+}

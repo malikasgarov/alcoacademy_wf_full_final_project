@@ -10,19 +10,28 @@ function Subject() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    const [programming, setProgramming] = useState([]);
+    const [programming, setprogramming] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState([]);
     const [showResults, setShowResults] = useState(false);
 
+    let tologin = useNavigate()
+    useEffect(()=>{
+        let token = getItems("token");
+        if (!token) {
+            tologin("/login");
+        }
+    });
     useEffect(() => {
         async function fetchprogramming() {
             setLoading(true);
             try {
                 const data = await getProgramming();
-                setProgramming(data);
+                setprogramming(data);
+                // Initialize answers array based on the number of questions
+                setAnswers(new Array(data.reduce((acc, quiz) => acc + quiz.questions.length, 0)).fill(null));
             } catch (error) {
                 console.error("Failed to fetch quizzes", error);
             }
@@ -80,12 +89,17 @@ function Subject() {
 
     const renderQuestion = () => {
         const question = programming[currentQuizIndex].questions[currentQuestionIndex];
+        const currentAnswer = answers[currentQuizIndex * programming[currentQuizIndex].questions.length + currentQuestionIndex];
         return (
             <div className="question">
                 <p>{currentQuestionIndex + 1}. {question.question}</p>
                 <ul>
                     {question.choices.map((choice, choiceIndex) => (
-                        <li key={choiceIndex} onClick={() => handleAnswer(choiceIndex)}>
+                        <li
+                            key={choiceIndex}
+                            onClick={() => handleAnswer(choiceIndex)}
+                            className={currentAnswer === choiceIndex ? "selected" : ""}
+                        >
                             {String.fromCharCode(65 + choiceIndex)}. {choice}
                         </li>
                     ))}
@@ -128,7 +142,7 @@ function Subject() {
     return (
         <>
             <Header />
-            <div className="Math container">
+            <div className="Math container" id="Math">
                 {loading ? <Loading /> : showResults ? renderResults() : renderQuestion()}
                 {!showResults && (
                     <div className="navigation">
@@ -141,5 +155,9 @@ function Subject() {
         </>
     );
 }
+function getItems(e) {
+    return localStorage.getItem(`${e}`) || false;
+}
 
 export default Subject;
+

@@ -51,9 +51,15 @@ const historySchema = new mongoose.Schema({
     questions: Array,
 }, { collection: 'history' });
 
+const englishSchema = new mongoose.Schema({
+    title: String,
+    questions: Array,
+}, { collection: 'english' });
+
 const User = mongoose.model("User", userSchema)
 const Math = mongoose.model("math", mathSchema);
 const Html = mongoose.model("html", htmlSchema);
+const English = mongoose.model("english", englishSchema);
 const History = mongoose.model("history", historySchema)
 const Results = mongoose.model("results", resultsSchema);
 
@@ -94,7 +100,7 @@ app.get("/api/getresults", async (req, res) => {
         const results = await Results.find();
         res.json(results);
     } catch (error) {
-        res.status(500).json({ error: "Failed to fetch quizzes" });
+        res.status(500).json({ error: "Failed to get Results" });
     }
 });
 app.post('/api/postresults', async (req, res) => {
@@ -116,7 +122,7 @@ app.get("/api/userslength", async (req, res) => {
         const users = await User.find();
         res.json(users);
     } catch (error) {
-        res.status(500).json({ error: "Failed to fetch quizzes" });
+        res.status(500).json({ error: "Failed to fetch length" });
     }
 });
 
@@ -143,6 +149,14 @@ app.get("/api/programming", async (req, res) => {
 app.get("/api/history", async (req, res) => {
     try {
         const quizzes = await History.find();
+        res.json(quizzes);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to fetch quizzes" });
+    }
+});
+app.get("/api/english", async (req, res) => {
+    try {
+        const quizzes = await English.find();
         res.json(quizzes);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch quizzes" });

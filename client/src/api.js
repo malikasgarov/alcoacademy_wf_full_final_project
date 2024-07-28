@@ -63,14 +63,6 @@ export const getUsersLength = async () => {
         throw error.response.data;
     }
 };
-export const getQuizzesLength = async () => {
-    try {
-        const response = await api.get('/quizzeslength');
-        return response.data;
-    } catch (error) {
-        throw error.response.data;
-    }
-};
 export const getResults = async () => {
     try {
         const response = await api.get('/getresults');
@@ -107,6 +99,14 @@ export const getProgramming = async () => {
 export const getHistory = async () => {
     try {
         const response = await api.get('/history');
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+export const getEnglish = async () => {
+    try {
+        const response = await api.get('/english');
         return response.data;
     } catch (error) {
         throw error.response.data;
