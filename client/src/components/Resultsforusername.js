@@ -39,7 +39,7 @@ function Resultsforusername() {
                         <div key={index} className="result">
                             <p>Subject: {res.subject}</p>
                             <p>Score: {res.result}</p>
-                            <p>Hour: {res.date.hour}:{res.date.minute}</p>
+                            <p>Hour: {res.date.hour}:{res.date.minute < 10 ? `0${res.date.minute}` : res.date.minute}</p>
                             <p>Date: {res.date.day}.{res.date.month}.{res.date.year}</p>
                         </div>
                         <hr></hr>

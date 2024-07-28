@@ -7,6 +7,7 @@ import Science from "./img/Science.jpg";
 import History from "./img/History.jpg";
 import Geography from "./img/geography.png";
 import { useEffect } from "react";
+import { HashLink } from "react-router-hash-link";
 
 function Categories() {
 
@@ -24,7 +25,7 @@ function Categories() {
         <>
             <div className="words container">
                 <h1>Explore Our Quiz Categories</h1>
-                <Link to="/exploreall">EXPLORE ALL</Link>
+                {/* <Link to="/exploreall">EXPLORE ALL</Link> */}
             </div>
             <div className="categories container" id="categories">
                 <Link to="/math" className="subject" onClick={Check}>

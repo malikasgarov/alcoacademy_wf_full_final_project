@@ -45,3 +45,13 @@ footer {
         }
     }
 }
+@media (max-width:400px) {
+    footer{
+        div.footlogo{
+            display: none;
+        }
+        img{
+            display: none;
+        }
+    }
+}

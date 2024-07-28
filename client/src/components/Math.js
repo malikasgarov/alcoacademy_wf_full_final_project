@@ -6,6 +6,9 @@ import { getMath, postResults } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 
 function Subject() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const [math, setMath] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
@@ -125,7 +128,7 @@ function Subject() {
     return (
         <>
             <Header />
-            <div className="Math container">
+            <div className="Math container" id="Math">
                 {loading ? <Loading /> : showResults ? renderResults() : renderQuestion()}
                 {!showResults && (
                     <div className="navigation">

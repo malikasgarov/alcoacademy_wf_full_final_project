@@ -49,8 +49,8 @@ function Home() {
 
 
     return (
-        <header>
-            <div className='container head'>
+        <header id='header'>
+            <div className='container head' id='head'>
                 <HashLink to="/#begin" className='logo' onClick={closeDropdown}>QUIZ MASTER</HashLink>
                 {/* <div className='logo'><img src={logo}></img></div> */}
                 <div className='links'>

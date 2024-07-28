@@ -7,6 +7,9 @@ import { getProgramming, postResults } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 
 function Subject() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const [programming, setProgramming] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentQuizIndex, setCurrentQuizIndex] = useState(0);

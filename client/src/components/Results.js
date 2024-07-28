@@ -39,7 +39,7 @@ function Results() {
                         <p>Username: {result.username}</p>
                         <p>Subject: {result.subject}</p>
                         <p>Score: {result.result}</p>
-                        <p>Hour: {result.date.hour}:{result.date.minute}</p>
+                        <p>Hour: {result.date.hour}:{result.date.minute < 10 ? `0${result.date.minute}` : result.date.minute}</p>
                         <p>Date: {result.date.day}.{result.date.month}.{result.date.year}</p>
                     </div>
                 ) : (
