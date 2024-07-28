@@ -9,6 +9,8 @@ import Register from "./components/register.js";
 import Login from "./components/login.js";
 import Math from "./components/Math.js";
 import Results from './components/Results.js';
+import Programming from "./components/Programming.js";
+import History from "./components/History.js"
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
         <Route path='*' element={<Index />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
-        <Route path='math' element={<Math />}></Route>
+        <Route path='/math' element={<Math />}></Route>
         <Route path='/results/:id' element={<Results />}></Route>
+        <Route path='/programming' element={<Programming />}></Route>
+        <Route path='/history' element={<History />}></Route>
       </Routes>
     </BrowserRouter>
   );

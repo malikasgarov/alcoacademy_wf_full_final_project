@@ -34,13 +34,6 @@ function Categories() {
                     <h2>Math</h2>
                     <p>Sky was cloudless and of a deep dark blue spectacle before us was indeed</p>
                 </Link>
-                <Link to="/english" className="subject" onClick={Check}>
-                    <div>
-                        <img src={English} alt="English"></img>
-                    </div>
-                    <h2>English</h2>
-                    <p>Even the all-powerful Pointing has no control about the blind texts.</p>
-                </Link>
                 <Link to="/programming" className="subject" onClick={Check}>
                     <div>
                         <img src={Programming} alt="Programming"></img>
@@ -48,26 +41,12 @@ function Categories() {
                     <h2>Programming</h2>
                     <p>Explore the diverse world of programming.</p>
                 </Link>
-                <Link to="/science" className="subject" onClick={Check}>
-                    <div>
-                        <img src={Science} alt="Science"></img>
-                    </div>
-                    <h2>Science</h2>
-                    <p>Unorthographic life One day however a small line of blind text.</p>
-                </Link>
                 <Link to="/history" className="subject" onClick={Check}>
                     <div>
                         <img src={History} alt="History"></img>
                     </div>
                     <h2>History</h2>
                     <p>History reveals the stories of our past and shapes our understanding of the present.</p>
-                </Link>
-                <Link to="/geography" className="subject" onClick={Check}>
-                    <div>
-                        <img src={Geography} alt="Geography"></img>
-                    </div>
-                    <h2>Geography</h2>
-                    <p>Geography explores the diverse landscapes and cultures of our planet.</p>
                 </Link>
             </div>
         </>

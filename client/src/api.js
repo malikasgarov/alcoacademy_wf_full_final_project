@@ -76,7 +76,7 @@ export const getResults = async () => {
         throw error.response.data;
     }
 };
-export const postResults = async () => {
+export const postResults = async (result) => {
     try {
         const response = await api.post('/postresults', {result});
         return response.data;
@@ -84,7 +84,6 @@ export const postResults = async () => {
         throw error.response.data;
     }
 };
-
 export const getMath = async () => {
     try {
         const response = await api.get('/math');
@@ -93,9 +92,9 @@ export const getMath = async () => {
         throw error.response.data;
     }
 };
-export const getHTML = async () => {
+export const getProgramming = async () => {
     try {
-        const response = await api.get('/history');
+        const response = await api.get('/programming');
         return response.data;
     } catch (error) {
         throw error.response.data;

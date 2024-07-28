@@ -38,9 +38,21 @@ const mathSchema = new mongoose.Schema({
     questions: Array,
 }, { collection: 'math' });
 
+const htmlSchema = new mongoose.Schema({
+    title: String,
+    questions: Array,
+}, { collection: 'html' });
+
+const historySchema = new mongoose.Schema({
+    title: String,
+    questions: Array,
+}, { collection: 'history' });
+
 const User = mongoose.model("User", userSchema);
 const Quiz = mongoose.model("quizzes", quizSchema);
 const Math = mongoose.model("math", mathSchema);
+const Html = mongoose.model("html", htmlSchema);
+const History = mongoose.model("history", historySchema)
 const Results = mongoose.model("results", resultsSchema);
 
 // ----------------- R E G I S T E R & L O G I N ------------------- \\
@@ -98,9 +110,9 @@ app.post("/api/postresults", async (req, res) => {
     try {
         const result = new Results({result});
         await result.save();
-        res.status(400).json({ message: "User Registered Succefully" });
+        res.status(201).json({ message: "Result saved Succefully" });
     } catch (err) {
-        res.status(201).json({ err: "User Already Exists" });
+        res.status(400).json({ err: "User Already Exists" });
     }
 })
 //------------------- / R E S U L T S \ ----------------------\\
@@ -136,9 +148,9 @@ app.get("/api/math", async (req, res) => {
         res.status(500).json({ error: "Failed to fetch quizzes" });
     }
 });
-app.get("/api/html", async (req, res) => {
+app.get("/api/programming", async (req, res) => {
     try {
-        const quizzes = await Math.find();
+        const quizzes = await Html.find();
         res.json(quizzes);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch quizzes" });
@@ -146,7 +158,7 @@ app.get("/api/html", async (req, res) => {
 });
 app.get("/api/history", async (req, res) => {
     try {
-        const quizzes = await Math.find();
+        const quizzes = await History.find();
         res.json(quizzes);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch quizzes" });

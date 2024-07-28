@@ -2,11 +2,11 @@ import Header from "./header";
 import Footer from "./Footer";
 import Loading from "./Loading";
 import { useState, useEffect } from "react";
-import { getMath, postResults } from "../api"; // Make sure the import is correct
+import { getHistory } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 
 function Subject() {
-    const [math, setMath] = useState([]);
+    const [history, setHistory] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -14,43 +14,33 @@ function Subject() {
     const [showResults, setShowResults] = useState(false);
 
     useEffect(() => {
-        async function fetchMath() {
+        async function fetchHistory() {
             setLoading(true);
             try {
-                const data = await getMath();
-                setMath(data);
+                const data = await getHistory();
+                setHistory(data);
             } catch (error) {
                 console.error("Failed to fetch quizzes", error);
             }
             setLoading(false);
         }
-        fetchMath();
+        fetchHistory();
     }, []);
 
     const handleAnswer = (answerIndex) => {
         const updatedAnswers = [...answers];
-        updatedAnswers[currentQuizIndex * math[currentQuizIndex].questions.length + currentQuestionIndex] = answerIndex;
+        updatedAnswers[currentQuizIndex * history[currentQuizIndex].questions.length + currentQuestionIndex] = answerIndex;
         setAnswers(updatedAnswers);
     };
 
     const handleNext = () => {
-        if (currentQuestionIndex < math[currentQuizIndex].questions.length - 1) {
+        if (currentQuestionIndex < history[currentQuizIndex].questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
-        } else if (currentQuizIndex < math.length - 1) {
+        } else if (currentQuizIndex < history.length - 1) {
             setCurrentQuizIndex(currentQuizIndex + 1);
             setCurrentQuestionIndex(0);
         } else {
             setShowResults(true);
-            postResults({
-                results: math.map((quiz, quizIndex) => ({
-                    quiz: quiz.title, // Assuming each quiz has a title
-                    answers: quiz.questions.map((question, questionIndex) => ({
-                        question: question.question,
-                        selectedAnswer: answers[quizIndex * quiz.questions.length + questionIndex],
-                        correctAnswer: question.correctAnswer
-                    }))
-                }))
-            });
         }
     };
 
@@ -59,12 +49,12 @@ function Subject() {
             setCurrentQuestionIndex(currentQuestionIndex - 1);
         } else if (currentQuizIndex > 0) {
             setCurrentQuizIndex(currentQuizIndex - 1);
-            setCurrentQuestionIndex(math[currentQuizIndex - 1].questions.length - 1);
+            setCurrentQuestionIndex(history[currentQuizIndex - 1].questions.length - 1);
         }
     };
 
     const renderQuestion = () => {
-        const question = math[currentQuizIndex].questions[currentQuestionIndex];
+        const question = history[currentQuizIndex].questions[currentQuestionIndex];
         return (
             <div className="question">
                 <p>{currentQuestionIndex + 1}. {question.question}</p>
@@ -83,7 +73,7 @@ function Subject() {
         return (
             <div className="results">
                 <h2>Results</h2>
-                {math.map((quiz, quizIndex) => (
+                {history.map((quiz, quizIndex) => (
                     <div key={quizIndex}>
                         <h3>Quiz {quizIndex + 1}</h3>
                         {quiz.questions.map((question, questionIndex) => {
@@ -102,9 +92,9 @@ function Subject() {
                     </div>
                 ))}
                 <p>Total correct answers: {answers.filter((answer, index) => {
-                    const quizIndex = Math.floor(index / math[0].questions.length);
-                    const questionIndex = index % math[0].questions.length;
-                    return answer === math[quizIndex].questions[questionIndex].correctAnswer;
+                    const quizIndex = Math.floor(index / history[0].questions.length);
+                    const questionIndex = index % history[0].questions.length;
+                    return answer === history[quizIndex].questions[questionIndex].correctAnswer;
                 }).length} / {answers.length}</p>
             </div>
         );

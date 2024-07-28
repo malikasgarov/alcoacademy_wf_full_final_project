@@ -3,6 +3,8 @@ import logimg from "./img/Screenshot_1.png";
 import logimg1 from "./img/Screenshot_2.png";
 import logimg2 from "./img/Screenshot_3.png";
 import logimg3 from "./img/Screenshot_4.png";
+import logimg4 from "./img/Screenshot_5.png";
+import logimg5 from "./img/Screenshot_6.png";
 
 
 function Howtoplay() {
@@ -49,7 +51,7 @@ function Howtoplay() {
                     </div>
                     <div className="cart">
                         <div className="img">
-                            <img src="https://placehold.co/250x200"></img>
+                            <img src={logimg4}></img>
                         </div>
                         <div className="word">
                             <h2>Step 5</h2>
@@ -58,7 +60,7 @@ function Howtoplay() {
                     </div>
                     <div className="cart">
                         <div className="img">
-                            <img src="https://placehold.co/250x200"></img>
+                            <img src={logimg5}></img>
                         </div>
                         <div className="word">
                             <h2>Step 6</h2>
