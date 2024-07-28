@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Loading from "./Loading";
 import "./css/Math.css";
 import { useState, useEffect } from "react";
-import { getProgramming } from "../api";
+import { getProgramming, postResults } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 
 function Subject() {
@@ -34,7 +34,7 @@ function Subject() {
         setAnswers(updatedAnswers);
     };
 
-    const handleNext = () => {
+    const handleNext = async () => {
         if (currentQuestionIndex < programming[currentQuizIndex].questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else if (currentQuizIndex < programming.length - 1) {
@@ -42,6 +42,27 @@ function Subject() {
             setCurrentQuestionIndex(0);
         } else {
             setShowResults(true);
+            const totalCorrectAnswers = answers.filter((answer, index) => {
+                const quizIndex = Math.floor(index / programming[0].questions.length);
+                const questionIndex = index % programming[0].questions.length;
+                return answer === programming[quizIndex].questions[questionIndex].correctAnswer;
+            }).length;
+            const resultString = `${totalCorrectAnswers}/25`;
+            const username = JSON.parse(localStorage.getItem("username"));
+            const subject = "Programming";
+            const now = new Date();
+            const date = {
+                minute: now.getMinutes(),
+                hour: now.getHours(),
+                day: now.getDate(),
+                month: now.getMonth() + 1,
+                year: now.getFullYear()
+            };
+            try {
+                await postResults(resultString, username, subject, date);
+            } catch (error) {
+                console.error("Failed to post results:", error);
+            }
         }
     };
 

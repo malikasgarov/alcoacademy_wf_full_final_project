@@ -36,10 +36,10 @@ function Register() {
                         <i className="lock"></i>
                         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
-                    <div>
+                    {/* <div>
                         <i className="lock"></i>
                         <input type="password" placeholder="Repeat Password" />
-                    </div>
+                    </div> */}
                     <input type="submit" value="Register" />
                     <p className="register-link">
                         Already have account? <Link to="/login">Login</Link>

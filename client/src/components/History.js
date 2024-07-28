@@ -2,7 +2,7 @@ import Header from "./header";
 import Footer from "./Footer";
 import Loading from "./Loading";
 import { useState, useEffect } from "react";
-import { getHistory } from "../api";
+import { getHistory, postResults } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 
 function Subject() {
@@ -33,7 +33,7 @@ function Subject() {
         setAnswers(updatedAnswers);
     };
 
-    const handleNext = () => {
+    const handleNext = async () => {
         if (currentQuestionIndex < history[currentQuizIndex].questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else if (currentQuizIndex < history.length - 1) {
@@ -41,6 +41,27 @@ function Subject() {
             setCurrentQuestionIndex(0);
         } else {
             setShowResults(true);
+            const totalCorrectAnswers = answers.filter((answer, index) => {
+                const quizIndex = Math.floor(index / history[0].questions.length);
+                const questionIndex = index % history[0].questions.length;
+                return answer === history[quizIndex].questions[questionIndex].correctAnswer;
+            }).length;
+            const resultString = `${totalCorrectAnswers}/25`;
+            const username = JSON.parse(localStorage.getItem("username"));
+            const subject = "History";
+            const now = new Date();
+            const date = {
+                minute: now.getMinutes(),
+                hour: now.getHours(),
+                day: now.getDate(),
+                month: now.getMonth() + 1,
+                year: now.getFullYear()
+            };
+            try {
+                await postResults(resultString, username, subject, date);
+            } catch (error) {
+                console.error("Failed to post results:", error);
+            }
         }
     };
 

@@ -12,6 +12,7 @@ const app = express();
 const port = 3001;
 app.use(cors());
 app.use(express.json());
+app.use(bodyparser.json())
 
 mongoose.connect("mongodb://localhost:27017/", {
     useNewUrlParser: true,
@@ -26,7 +27,9 @@ const userSchema = new mongoose.Schema({
 const resultsSchema = new mongoose.Schema({
     username:String,
     result: String,
-});
+    subject: String,
+    date:Object,
+}, {collection:'results'});
 
 const quizSchema = new mongoose.Schema({
     title: String,
@@ -48,8 +51,7 @@ const historySchema = new mongoose.Schema({
     questions: Array,
 }, { collection: 'history' });
 
-const User = mongoose.model("User", userSchema);
-const Quiz = mongoose.model("quizzes", quizSchema);
+const User = mongoose.model("User", userSchema)
 const Math = mongoose.model("math", mathSchema);
 const Html = mongoose.model("html", htmlSchema);
 const History = mongoose.model("history", historySchema)
@@ -60,7 +62,6 @@ const Results = mongoose.model("results", resultsSchema);
 app.post("/api/register", async (req, res) => {
     const { username, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-
     try {
         const newUser = new User({ username, password: hashedPassword });
         await newUser.save();
@@ -87,15 +88,6 @@ app.post("/api/login", async (req, res) => {
 
 // ----------------- / R E G I S T E R & L O G I N \------------------- \\
 
-app.get("/api/quizzes", async (req, res) => {
-    try {
-        const quizzes = await Quiz.find();
-        res.json(quizzes);
-    } catch (error) {
-        res.status(500).json({ error: "Failed to fetch quizzes" });
-    }
-});
-
 //------------------- R E S U L T S ----------------------\\
 app.get("/api/getresults", async (req, res) => {
     try {
@@ -105,16 +97,16 @@ app.get("/api/getresults", async (req, res) => {
         res.status(500).json({ error: "Failed to fetch quizzes" });
     }
 });
-app.post("/api/postresults", async (req, res) => {
-    const { result } = req.body;
+app.post('/api/postresults', async (req, res) => {
+    const { username, result, subject, date } = req.body;
     try {
-        const result = new Results({result});
-        await result.save();
-        res.status(201).json({ message: "Result saved Succefully" });
+        const resultt = new Results({ username, result, subject, date});
+        await resultt.save();
+        res.status(201).json({ message: "Result saved Successfully" });
     } catch (err) {
-        res.status(400).json({ err: "User Already Exists" });
+        res.status(400).json({ err: "Can't post Result" });
     }
-})
+});
 //------------------- / R E S U L T S \ ----------------------\\
 
 // ------------------ L E N G H T ----------------------- \\
@@ -123,14 +115,6 @@ app.get("/api/userslength", async (req, res) => {
     try {
         const users = await User.find();
         res.json(users);
-    } catch (error) {
-        res.status(500).json({ error: "Failed to fetch quizzes" });
-    }
-});
-app.get("/api/quizzeslength", async (req, res) => {
-    try {
-        const quizzes = await Quiz.find();
-        res.json(quizzes);
     } catch (error) {
         res.status(500).json({ error: "Failed to fetch quizzes" });
     }
@@ -167,10 +151,10 @@ app.get("/api/history", async (req, res) => {
 
 // ------------------ / Q U I Z Z E S \ --------------------- \\
 
-// ------------------  L I S T E N  ------------------ \\
+// ------------------  L I S T E N - S E R V E R  ------------------ \\
 
 app.listen(port, () => {
     console.log("Server running");
 });
 
-// ------------------ / L I S T E N \ ------------------ \\
+// ------------------ / L I S T E N - S E R V E R \ ------------------ \\

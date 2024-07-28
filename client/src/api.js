@@ -76,12 +76,13 @@ export const getResults = async () => {
         throw error.response.data;
     }
 };
-export const postResults = async (result) => {
+export const postResults = async (result, username, subject, date) => {
     try {
-        const response = await api.post('/postresults', {result});
+        const response = await api.post('/postresults', { result, username, subject, date });
         return response.data;
     } catch (error) {
-        throw error.response.data;
+        console.error("Error posting results:", error.response ? error.response.data : error.message);
+        throw error.response ? error.response.data : error;
     }
 };
 export const getMath = async () => {

@@ -1,5 +1,5 @@
 div.containerr {
-    height: 100vh;
+    height: calc(100vh - 100);
     display: flex;
     justify-content: center;
     align-items: center;

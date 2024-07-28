@@ -2,7 +2,7 @@ import Header from "./header";
 import Footer from "./Footer";
 import Loading from "./Loading";
 import { useState, useEffect } from "react";
-import { getMath, postResults } from "../api"; // Make sure the import is correct
+import { getMath, postResults } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 
 function Subject() {
@@ -33,7 +33,7 @@ function Subject() {
         setAnswers(updatedAnswers);
     };
 
-    const handleNext = () => {
+    const handleNext = async () => {
         if (currentQuestionIndex < math[currentQuizIndex].questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else if (currentQuizIndex < math.length - 1) {
@@ -41,18 +41,30 @@ function Subject() {
             setCurrentQuestionIndex(0);
         } else {
             setShowResults(true);
-            postResults({
-                results: math.map((quiz, quizIndex) => ({
-                    quiz: quiz.title, // Assuming each quiz has a title
-                    answers: quiz.questions.map((question, questionIndex) => ({
-                        question: question.question,
-                        selectedAnswer: answers[quizIndex * quiz.questions.length + questionIndex],
-                        correctAnswer: question.correctAnswer
-                    }))
-                }))
-            });
+            const totalCorrectAnswers = answers.filter((answer, index) => {
+                const quizIndex = Math.floor(index / math[0].questions.length);
+                const questionIndex = index % math[0].questions.length;
+                return answer === math[quizIndex].questions[questionIndex].correctAnswer;
+            }).length;
+            const resultString = `${totalCorrectAnswers}/25`;
+            const username = JSON.parse(localStorage.getItem("username"));
+            const subject = "Math";
+            const now = new Date();
+            const date = {
+                minute: now.getMinutes(),
+                hour: now.getHours(),
+                day: now.getDate(),
+                month: now.getMonth() + 1,
+                year: now.getFullYear()
+            };
+            try {
+                await postResults(resultString, username, subject, date);
+            } catch (error) {
+                console.error("Failed to post results:", error);
+            }
         }
     };
+    
 
     const handlePrev = () => {
         if (currentQuestionIndex > 0) {
