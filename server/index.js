@@ -152,7 +152,6 @@ app.get("/api/history", async (req, res) => {
 // ------------------ / Q U I Z Z E S \ --------------------- \\
 
 // ------------------  L I S T E N - S E R V E R  ------------------ \\
-
 app.listen(port, () => {
     console.log("Server running");
 });

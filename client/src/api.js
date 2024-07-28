@@ -22,8 +22,11 @@
 // }
 import axios from 'axios';
 
+// const api = axios.create({
+//     baseURL: "http://localhost:3001/api"
+// });
 const api = axios.create({
-    baseURL: "http://127.0.0.1:3001/api"
+    baseURL: "http://192.168.0.5:3001/api"
 });
 
 export const registerUser = async (username, password) => {
