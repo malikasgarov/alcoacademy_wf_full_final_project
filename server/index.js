@@ -36,6 +36,12 @@ const quizSchema = new mongoose.Schema({
     question: Array,
 });
 
+const contactSchema = new mongoose.Schema({
+    username: { type: String, required: true },
+    email: { type: String, required: true },
+    contactmessage: { type: String, required: true }
+}, { collection: 'contact' });
+
 const mathSchema = new mongoose.Schema({
     title: String,
     questions: Array,
@@ -66,6 +72,7 @@ const Users = mongoose.model("Users", usersSchema);
 const English = mongoose.model("english", englishSchema);
 const History = mongoose.model("history", historySchema);
 const Results = mongoose.model("results", resultsSchema);
+const Contact = mongoose.model("Contact", contactSchema);
 
 // ----------------- R E G I S T E R & L O G I N ------------------- \\
 
@@ -101,10 +108,6 @@ app.post("/api/login", async (req, res) => {
 
 
 // ----------------- / R E G I S T E R & L O G I N \------------------- \\
-
-//---------------------P R O F I L E -----------------------------\\
-
-//---------------------P R O F I L E -----------------------------\\
 
 //------------------- R E S U L T S ----------------------\\
 app.get("/api/getresults", async (req, res) => {
@@ -211,6 +214,19 @@ app.get("/api/english", async (req, res) => {
 });
 
 // ------------------ / Q U I Z Z E S \ --------------------- \\
+
+// ---------------------- C O N T A C T ------------------------\\
+app.post('/api/contact', async (req, res) => {
+    const { username, email, contactmessage } = req.body;
+    try {
+        const contactt = new Contact({ username, email, contactmessage });
+        await contactt.save();
+        res.status(201).json({ message: "Your Message Sent!" });
+    } catch (err) {
+        res.status(400).json({ err: "Can't post Result" });
+    }
+});
+// ----------------------/ C O N T A C T \ ------------------------\\
 
 // ------------------  L I S T E N - S E R V E R  ------------------ \\
 const HOST = "0.0.0.0";

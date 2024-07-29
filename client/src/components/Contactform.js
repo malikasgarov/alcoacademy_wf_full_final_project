@@ -1,21 +1,55 @@
-import { Link } from "react-router-dom";
 import "./css/Contactform.css";
-import logo from "./img/logo-removebg-preview.png"
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
+import logo from "./img/logo-removebg-preview.png";
+import { useState } from "react";
+import { contactMess } from "../api";
 
 function Contactform() {
-    return (
+    const [username, setUsername] = useState('');
+    const [contactmessage, setContactMessage] = useState('');
+    const [message, setMessage] = useState('');
+    const [email, setEmail] = useState('');
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const data = await contactMess(username, email, contactmessage);
+            setMessage(data.message);
+            setUsername('');
+            setEmail('');
+            setContactMessage('');
+            document.getElementById("back").style.display = "block";
+            // alert("Your Message Sent!");
+        } catch (error) {
+            console.error('Submission error:', error);
+            setMessage(error.message || "An error occurred");
+            alert("Wasn't able to send the message");
+        }
+    }
+    function Close() {
+        document.getElementById("back").style.display = "none";
+    }
+
+    return (<>
+        <div className="back" id="back">
+            <div className="sendmessage" id="sendmessage">
+                <h2>Message Sent Succesfully!</h2>
+                <div className="closebtn" id="closebtn" onClick={Close}>
+                    Close
+                </div>
+            </div>
+        </div>
         <div className="formbck">
             <div className="contactform container">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <label for="name">NAME</label>
-                    <input type="text" name="name" />
+                    <input id="username" type="text" name="name" value={username} onChange={(e) => setUsername(e.target.value)} required />
 
                     <label for="email">EMAIL</label>
-                    <input type="text" name="email" />
+                    <input id="email" type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
                     <label for="message">MESSAGE</label>
-                    <textarea name="message" rows={6}></textarea>
+                    <textarea id="message" name="message" rows={6} value={contactmessage} onChange={(e) => setContactMessage(e.target.value)} required></textarea>
                     <input type="submit" value="Submit" className="sub"></input>
                 </form>
             </div>
@@ -45,6 +79,7 @@ function Contactform() {
                 </div>
             </div>
         </div>
+    </>
     );
 }
 

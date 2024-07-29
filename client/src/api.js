@@ -120,4 +120,15 @@ export const getEnglish = async () => {
     }
 };
 
+//------------------ H E L P --------------------\\
+
+export const contactMess = async (username, email, contactmessage)=>{
+    try{
+        const response = await api.post('/contact', {username, email, contactmessage});
+        return response.data;
+    }catch(error){
+            throw error.response.data;
+    }
+}
+
 
