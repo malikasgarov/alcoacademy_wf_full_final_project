@@ -2,7 +2,7 @@ import "./css/HowtoPlay.css";
 import logimg from "./img/Screenshot_1.png";
 import logimg1 from "./img/Screenshot_2.png";
 import logimg2 from "./img/Screenshot_3.png";
-import logimg3 from "./img/Screenshot_4.png";
+import logimg3 from "./img/Math1.png";
 import logimg4 from "./img/Screenshot_5.png";
 import logimg5 from "./img/Screenshot_6.png";
 

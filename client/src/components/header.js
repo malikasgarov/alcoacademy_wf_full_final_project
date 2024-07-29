@@ -99,8 +99,10 @@ function Home() {
                     <div className='profile' id='profile' ref={profileRef} onClick={toggleProfileDropdown}>
                     </div>
                     <div className={`profile-dropdown ${profileDropdownActive ? 'active' : ''}`}>
-                    <Link to="#" onClick={handleDeleteAccount} style={{color:"red"}}>Delete Account</Link>
-                        <Link className='logout' onClick={logout} ref={logoutRef}>
+                        <Link to="#" onClick={handleDeleteAccount} style={{ color: "red" }}>
+                            Delete Account
+                        </Link>
+                        <Link className='' onClick={logout} ref={logoutRef}>
                             <i className="fa-solid fa-arrow-right-to-bracket"></i> Log out
                         </Link>
                     </div>

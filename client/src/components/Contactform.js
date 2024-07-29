@@ -10,6 +10,7 @@ function Contactform() {
     const [contactmessage, setContactMessage] = useState('');
     const [message, setMessage] = useState('');
     const [email, setEmail] = useState('');
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -19,7 +20,6 @@ function Contactform() {
             setEmail('');
             setContactMessage('');
             document.getElementById("back").style.display = "block";
-            // alert("Your Message Sent!");
         } catch (error) {
             console.error('Submission error:', error);
             setMessage(error.message || "An error occurred");
@@ -31,7 +31,7 @@ function Contactform() {
     }
 
     return (<>
-        <div className="back" id="back">
+        <div className="back fade-in" id="back">
             <div className="sendmessage" id="sendmessage">
                 <h2>Message Sent Succesfully!</h2>
                 <div className="closebtn" id="closebtn" onClick={Close}>

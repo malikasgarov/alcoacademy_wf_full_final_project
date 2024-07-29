@@ -1,11 +1,9 @@
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
-
 body,
 html {
     min-height: 100%;
     margin: 0;
 }
-
 .login-bg {
     /* background-image: url('http://getwallpapers.com/wallpaper/full/0/4/c/122144.jpg'); */
     background-position: center;

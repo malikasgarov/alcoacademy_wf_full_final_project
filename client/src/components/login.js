@@ -20,14 +20,24 @@ function Login() {
       navigate("/");
     } catch (error) {
       setMessage(error.err);
-      alert("invalid password");
+      // alert("invalid password");
+      document.getElementById("back").style.display = "flex";
     }
-
   }
-
+  function Close(){
+    document.getElementById("back").style.display = "none";
+  }
   return (
     <>
       <Header></Header>
+      <div className="back fade-in" id="back">
+        <div className="sendmessage" id="sendmessage">
+          <h2>Invalid Password!</h2>
+          <div className="closebtn" id="closebtn" onClick={Close}>
+            Close
+          </div>
+        </div>
+      </div >
       <div className="login-bg">
         <form className="box" onSubmit={hadleLogin}>
           <h1>Login</h1>
@@ -39,7 +49,7 @@ function Login() {
             <i className="lock"></i>
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <p>{message ? message :' ' }</p>
+          <p>{message ? message : ' '}</p>
           <input type="submit" value="Log in" />
           <p className="register-link">
             Don't have an account? <Link to="/register">Register</Link>

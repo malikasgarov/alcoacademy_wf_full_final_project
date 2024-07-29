@@ -9,22 +9,32 @@ function Register() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-    let tohome = useNavigate();
+    let tologin = useNavigate();
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
             const data = await registerUser(username, password);
             setMessage(data.message);
-            tohome("/");
+            tologin("/login");
         } catch (error) {
             setMessage(error.error);
-            alert("user already exists");
+            document.getElementById("back").style.display = "block";
         }
     }
-
+    function Close() {
+        document.getElementById("back").style.display = "none";
+    }
     return (
         <>
             <Header></Header>
+            <div className="back fade-in" id="back">
+                <div className="sendmessage" id="sendmessage">
+                    <h2>User Already Exists!</h2>
+                    <div className="closebtn" id="closebtn" onClick={Close}>
+                        Close
+                    </div>
+                </div>
+            </div >
             <div className="login-bg">
                 <form className="box" onSubmit={handleRegister}>
                     <h1>Register</h1>

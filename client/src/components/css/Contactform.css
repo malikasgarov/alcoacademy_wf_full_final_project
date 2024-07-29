@@ -57,12 +57,15 @@ div.formbck {
     translate: 0 -75px;
     color: grey;
 }
-input#email{
+
+input#email {
     padding: 8px 16px;
 }
-input#message{
+
+input#message {
     font-size: 24px;
 }
+
 div.copyrights {
     background-color: #1D4645;
     display: flex;
@@ -74,6 +77,7 @@ div.copyrights {
         div {
             user-select: none;
             display: flex;
+
             i {
                 color: white;
                 letter-spacing: 1px;
@@ -145,11 +149,13 @@ div.contactform {
 
     }
 }
-body{
-    position:relative;
+
+body {
+    position: relative;
 }
-div.back{
-    position:fixed;
+
+div.back {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -158,8 +164,9 @@ div.back{
     display: none;
     background-color: rgba(0, 0, 0, 0.6);
 }
-div.sendmessage{
-    position:absolute;
+
+div.sendmessage {
+    position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -167,26 +174,57 @@ div.sendmessage{
     flex-direction: column;
     gap: 8px;
     z-index: 1010;
-    padding: 16px;
+    padding: 32px;
     background-color: #1D4645;
     transition: all 1s;
-    h2{
+    border-radius: 8px;
+
+    h2 {
         text-align: center;
         color: white;
     }
-    div.closebtn{
+
+    div.closebtn {
         text-align: center;
         cursor: pointer;
         padding: 8px 16px;
         color: #1D4645;
         background-color: white;
         transition: all 0.35s;
+        border-radius: 8px;
     }
-    div.closebtn:hover{
+    div.closebtn:hover {
         color: white;
         background-color: #1D4645;
     }
 }
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
+  }
+  
+  .fade-out {
+    opacity: 1;
+    animation: fadeOut 1s forwards;
+  }
 
 
 @media (max-width:768px) {
