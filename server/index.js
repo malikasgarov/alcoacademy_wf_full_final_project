@@ -25,11 +25,11 @@ const userSchema = new mongoose.Schema({
 });
 
 const resultsSchema = new mongoose.Schema({
-    username:String,
+    username: String,
     result: String,
     subject: String,
-    date:Object,
-}, {collection:'results'});
+    date: Object,
+}, { collection: 'results' });
 
 const quizSchema = new mongoose.Schema({
     title: String,
@@ -55,21 +55,25 @@ const englishSchema = new mongoose.Schema({
     title: String,
     questions: Array,
 }, { collection: 'english' });
+const usersSchema = new mongoose.Schema({
+    username: String,
+}, { collection: "users" });
 
-const User = mongoose.model("User", userSchema)
+const User = mongoose.model("User", userSchema);
 const Math = mongoose.model("math", mathSchema);
 const Html = mongoose.model("html", htmlSchema);
+const Users = mongoose.model("Users", usersSchema);
 const English = mongoose.model("english", englishSchema);
-const History = mongoose.model("history", historySchema)
+const History = mongoose.model("history", historySchema);
 const Results = mongoose.model("results", resultsSchema);
 
 // ----------------- R E G I S T E R & L O G I N ------------------- \\
 
 app.post("/api/register", async (req, res) => {
     const { username, password } = req.body;
-    const  user = await User.findOne({username});
-    if(user){
-        return res.status(400).json({message:"user already exists"});
+    const user = await User.findOne({ username });
+    if (user) {
+        return res.status(400).json({ message: "user already exists" });
     }
     const hashedPassword = await bcrypt.hash(password, 10);
     try {
@@ -98,6 +102,10 @@ app.post("/api/login", async (req, res) => {
 
 // ----------------- / R E G I S T E R & L O G I N \------------------- \\
 
+//---------------------P R O F I L E -----------------------------\\
+
+//---------------------P R O F I L E -----------------------------\\
+
 //------------------- R E S U L T S ----------------------\\
 app.get("/api/getresults", async (req, res) => {
     try {
@@ -110,7 +118,7 @@ app.get("/api/getresults", async (req, res) => {
 app.post('/api/postresults', async (req, res) => {
     const { username, result, subject, date } = req.body;
     try {
-        const resultt = new Results({ username, result, subject, date});
+        const resultt = new Results({ username, result, subject, date });
         await resultt.save();
         res.status(201).json({ message: "Result saved Successfully" });
     } catch (err) {
@@ -131,7 +139,42 @@ app.get("/api/userslength", async (req, res) => {
 });
 
 // ------------------ / L E N G H T \ ----------------------- \\
+//-------------------- D E L E T E  U S E R ------------------\\
+const deleteUserAccount = async (identifier) => {
+    try {
+        const result = await User.deleteOne({ username: identifier });
+        const results = await Results.deleteMany({username: identifier});
+        if (result.deletedCount === 1) {
+            console.log('User account deleted successfully.');
+            return { success: true, message: 'User account deleted successfully.' };
+        } else {
+            console.log('User account not found.');
+            return { success: false, message: 'User account not found.' };
+        }
+    } catch (err) {
+        console.error('Error deleting user account:', err);
+        return { success: false, message: 'Error deleting user account.' };
+    }
+};
 
+app.delete('/delete-account/:id', async (req, res) => {
+    const userId = req.params.id;
+    try {
+        const result = await deleteUserAccount(userId);
+        if (result.success) {
+            res.status(200).json({ message: "Deleted successfully" });
+        } else {
+            res.status(404).json({ message: "Unable to delete" });
+        }
+    } catch (error) {
+        console.error("Error deleting account:", error);
+        res.status(500).json({ message: "Server error" });
+    }
+});
+
+
+
+//-------------------- /D E L E T E  U S E R\ ------------------\\
 // ------------------ Q U I Z Z E S --------------------- \\
 
 app.get("/api/math", async (req, res) => {

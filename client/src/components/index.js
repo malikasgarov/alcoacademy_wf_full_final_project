@@ -1,5 +1,5 @@
-import Begin from "./begin";
-import Header from "./header";
+import Begin from "./Begin";
+import Header from "./Header";
 import Counters from "./Counters";
 import Howtoplay from "./HowtoPlay";
 import Categories from "./Categories";

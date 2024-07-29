@@ -1,6 +1,6 @@
-import "./css/login.css";
+import "./css/Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import Header from "./header";
+import Header from "./Header";
 import { loginUser } from "../api";
 import { useState } from "react";
 import App from "../App";

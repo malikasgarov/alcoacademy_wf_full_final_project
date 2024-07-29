@@ -2,7 +2,7 @@ import "./css/Resultsforusername.css";
 import { getResults } from "../api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Header from "./header";
+import Header from "./Header";
 import Footer from "./Footer";
 import Loading from "./Loading";
 

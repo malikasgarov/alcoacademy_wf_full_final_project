@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Header from './components/header.js';
-import Begin from './components/begin.js';
+import Begin from './components/Begin.js';
+import Header from './components/Header.js';
 import Counters from './components/Counters.js';
 import Index from './components/index.js';
-import Register from "./components/register.js";
-import Login from "./components/login.js";
+import Register from "./components/Register.js";
+import Login from "./components/Login.js";
 import Math from "./components/Math.js";
 import Results from './components/Results.js';
 import Programming from "./components/Programming.js";
