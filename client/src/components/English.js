@@ -46,33 +46,36 @@ function Subject() {
     };
 
     const handleNext = async () => {
-        if (currentQuestionIndex < english[currentQuizIndex].questions.length - 1) {
-            setCurrentQuestionIndex(currentQuestionIndex + 1);
-        } else if (currentQuizIndex < english.length - 1) {
-            setCurrentQuizIndex(currentQuizIndex + 1);
-            setCurrentQuestionIndex(0);
-        } else {
-            setShowResults(true);
-            const totalCorrectAnswers = answers.filter((answer, index) => {
-                const quizIndex = Math.floor(index / english[0].questions.length);
-                const questionIndex = index % english[0].questions.length;
-                return answer === english[quizIndex].questions[questionIndex].correctAnswer;
-            }).length;
-            const resultString = `${totalCorrectAnswers}/25`;
-            const username = JSON.parse(localStorage.getItem("username"));
-            const subject = "English";
-            const now = new Date();
-            const date = {
-                minute: now.getMinutes(),
-                hour: now.getHours(),
-                day: now.getDate(),
-                month: now.getMonth() + 1,
-                year: now.getFullYear()
-            };
-            try {
-                await postResults(resultString, username, subject, date);
-            } catch (error) {
-                console.error("Failed to post results:", error);
+        const answerIndex = answers[currentQuizIndex * english[currentQuizIndex].questions.length + currentQuestionIndex];
+        if (answerIndex !== null) {
+            if (currentQuestionIndex < english[currentQuizIndex].questions.length - 1) {
+                setCurrentQuestionIndex(currentQuestionIndex + 1);
+            } else if (currentQuizIndex < english.length - 1) {
+                setCurrentQuizIndex(currentQuizIndex + 1);
+                setCurrentQuestionIndex(0);
+            } else {
+                setShowResults(true);
+                const totalCorrectAnswers = answers.filter((answer, index) => {
+                    const quizIndex = Math.floor(index / english[0].questions.length);
+                    const questionIndex = index % english[0].questions.length;
+                    return answer === english[quizIndex].questions[questionIndex].correctAnswer;
+                }).length;
+                const resultString = `${totalCorrectAnswers}/25`;
+                const username = JSON.parse(localStorage.getItem("username"));
+                const subject = "English";
+                const now = new Date();
+                const date = {
+                    minute: now.getMinutes(),
+                    hour: now.getHours(),
+                    day: now.getDate(),
+                    month: now.getMonth() + 1,
+                    year: now.getFullYear()
+                };
+                try {
+                    await postResults(resultString, username, subject, date);
+                } catch (error) {
+                    console.error("Failed to post results:", error);
+                }
             }
         }
     };

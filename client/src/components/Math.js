@@ -9,26 +9,26 @@ function Subject() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    const [math, setmath] = useState([]);
+    const [math, setMath] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState([]);
     const [showResults, setShowResults] = useState(false);
 
-    let tologin = useNavigate()
-    useEffect(()=>{
+    let tologin = useNavigate();
+    useEffect(() => {
         let token = getItems("token");
         if (!token) {
             tologin("/login");
         }
     });
     useEffect(() => {
-        async function fetchmath() {
+        async function fetchMath() {
             setLoading(true);
             try {
                 const data = await getMath();
-                setmath(data);
+                setMath(data);
                 // Initialize answers array based on the number of questions
                 setAnswers(new Array(data.reduce((acc, quiz) => acc + quiz.questions.length, 0)).fill(null));
             } catch (error) {
@@ -36,7 +36,7 @@ function Subject() {
             }
             setLoading(false);
         }
-        fetchmath();
+        fetchMath();
     }, []);
 
     const handleAnswer = (answerIndex) => {
@@ -46,33 +46,36 @@ function Subject() {
     };
 
     const handleNext = async () => {
-        if (currentQuestionIndex < math[currentQuizIndex].questions.length - 1) {
-            setCurrentQuestionIndex(currentQuestionIndex + 1);
-        } else if (currentQuizIndex < math.length - 1) {
-            setCurrentQuizIndex(currentQuizIndex + 1);
-            setCurrentQuestionIndex(0);
-        } else {
-            setShowResults(true);
-            const totalCorrectAnswers = answers.filter((answer, index) => {
-                const quizIndex = Math.floor(index / math[0].questions.length);
-                const questionIndex = index % math[0].questions.length;
-                return answer === math[quizIndex].questions[questionIndex].correctAnswer;
-            }).length;
-            const resultString = `${totalCorrectAnswers}/25`;
-            const username = JSON.parse(localStorage.getItem("username"));
-            const subject = "Math";
-            const now = new Date();
-            const date = {
-                minute: now.getMinutes(),
-                hour: now.getHours(),
-                day: now.getDate(),
-                month: now.getMonth() + 1,
-                year: now.getFullYear()
-            };
-            try {
-                await postResults(resultString, username, subject, date);
-            } catch (error) {
-                console.error("Failed to post results:", error);
+        const answerIndex = answers[currentQuizIndex * math[currentQuizIndex].questions.length + currentQuestionIndex];
+        if (answerIndex !== null) {
+            if (currentQuestionIndex < math[currentQuizIndex].questions.length - 1) {
+                setCurrentQuestionIndex(currentQuestionIndex + 1);
+            } else if (currentQuizIndex < math.length - 1) {
+                setCurrentQuizIndex(currentQuizIndex + 1);
+                setCurrentQuestionIndex(0);
+            } else {
+                setShowResults(true);
+                const totalCorrectAnswers = answers.filter((answer, index) => {
+                    const quizIndex = Math.floor(index / math[0].questions.length);
+                    const questionIndex = index % math[0].questions.length;
+                    return answer === math[quizIndex].questions[questionIndex].correctAnswer;
+                }).length;
+                const resultString = `${totalCorrectAnswers}/25`;
+                const username = JSON.parse(localStorage.getItem("username"));
+                const subject = "Math";
+                const now = new Date();
+                const date = {
+                    minute: now.getMinutes(),
+                    hour: now.getHours(),
+                    day: now.getDate(),
+                    month: now.getMonth() + 1,
+                    year: now.getFullYear()
+                };
+                try {
+                    await postResults(resultString, username, subject, date);
+                } catch (error) {
+                    console.error("Failed to post results:", error);
+                }
             }
         }
     };

@@ -170,7 +170,8 @@ app.get("/api/english", async (req, res) => {
 // ------------------ / Q U I Z Z E S \ --------------------- \\
 
 // ------------------  L I S T E N - S E R V E R  ------------------ \\
-app.listen(port, () => {
+const HOST = "0.0.0.0";
+app.listen(port, HOST, () => {
     console.log("Server running");
 });
 
