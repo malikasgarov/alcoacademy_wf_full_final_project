@@ -26,7 +26,7 @@ import axios from 'axios';
 //     baseURL: "http://localhost:3001/api"
 // });
 const api = axios.create({
-    baseURL: "http://192.168.0.5:3001/api"
+    baseURL: "http://192.168.0.26:3001/api"
 });
 
 export const registerUser = async (username, password) => {
@@ -43,7 +43,7 @@ export const loginUser = async (username, password) => {
         const response = await api.post('/login', { username, password });
         return response.data;
     } catch (error) {
-        throw error.response.data;
+        return 
     }
 };
 

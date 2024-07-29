@@ -19,7 +19,8 @@ function Login() {
       localStorage.setItem("username", JSON.stringify(username));
       navigate("/");
     } catch (error) {
-      setMessage(error.error)
+      setMessage(error.err);
+      alert("invalid password");
     }
 
   }
@@ -38,6 +39,7 @@ function Login() {
             <i className="lock"></i>
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
+          <p>{message ? message :' ' }</p>
           <input type="submit" value="Log in" />
           <p className="register-link">
             Don't have an account? <Link to="/register">Register</Link>

@@ -67,6 +67,10 @@ const Results = mongoose.model("results", resultsSchema);
 
 app.post("/api/register", async (req, res) => {
     const { username, password } = req.body;
+    const  user = await User.findOne({username});
+    if(user){
+        return res.status(400).json({message:"user already exists"});
+    }
     const hashedPassword = await bcrypt.hash(password, 10);
     try {
         const newUser = new User({ username, password: hashedPassword });
@@ -81,11 +85,11 @@ app.post("/api/login", async (req, res) => {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
     if (!user) {
-        return res.status.json({ error: "Invalid password or username" });
+        return res.status(400).json({ err: "Invalid password or username" });
     }
     const isPasswordvalid = await bcrypt.compare(password, user.password);
     if (!isPasswordvalid) {
-        return res.status(400).json({ error: "Invalid username or password" });
+        return res.status(400).json({ err: "Invalid username or password" });
     }
     const token = jwt.sign({ id: user._id }, "RANDOMPASSWORDFORJWTSECRETKEY");
     res.json({ token });
