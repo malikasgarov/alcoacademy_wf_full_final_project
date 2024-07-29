@@ -9,12 +9,12 @@ const jwt = require("jsonwebtoken");
 
 dotenv.config();
 const app = express();
-const port = 3001;
+const port = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 app.use(bodyparser.json())
 
-mongoose.connect("mongodb://localhost:27017/", {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -102,7 +102,7 @@ app.post("/api/login", async (req, res) => {
     if (!isPasswordvalid) {
         return res.status(400).json({ err: "Invalid username or password" });
     }
-    const token = jwt.sign({ id: user._id }, "RANDOMPASSWORDFORJWTSECRETKEY");
+    const token = jwt.sign({ id: user._id }, process.env.SECRETJWT);
     res.json({ token });
 });
 
@@ -229,7 +229,7 @@ app.post('/api/contact', async (req, res) => {
 // ----------------------/ C O N T A C T \ ------------------------\\
 
 // ------------------  L I S T E N - S E R V E R  ------------------ \\
-const HOST = "0.0.0.0";
+const HOST = process.env.HOST;
 app.listen(port, HOST, () => {
     console.log("Server running");
 });
