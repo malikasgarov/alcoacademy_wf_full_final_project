@@ -226,6 +226,14 @@ app.post('/api/contact', async (req, res) => {
         res.status(400).json({ err: "Can't post Result" });
     }
 });
+app.get("/api/messages", async (req, res) => {
+    try {
+        const contactt = await Contact.find();
+        res.json(contactt);
+    } catch (error) {
+        res.status(400).json({ error: "Failed to fetch messages" });
+    }
+});
 // ----------------------/ C O N T A C T \ ------------------------\\
 
 // ------------------  L I S T E N - S E R V E R  ------------------ \\

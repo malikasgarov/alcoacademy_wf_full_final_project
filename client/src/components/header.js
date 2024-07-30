@@ -52,6 +52,7 @@ function Home() {
     useEffect(() => {
         const token = getItems("token");
         const name = JSON.parse(localStorage.getItem("username"));
+        setNamee(name);
         if (token) {
             if (logoutRef.current) {
                 logoutRef.current.style.display = "block";
@@ -99,10 +100,11 @@ function Home() {
                     <div className='profile' id='profile' ref={profileRef} onClick={toggleProfileDropdown}>
                     </div>
                     <div className={`profile-dropdown ${profileDropdownActive ? 'active' : ''}`}>
+                        <Link to={`/resultsforusername/${namee? namee : ' '}`} >Your Results</Link>
                         <Link to="#" onClick={handleDeleteAccount} style={{ color: "red" }}>
                             Delete Account
                         </Link>
-                        <Link className='' onClick={logout} ref={logoutRef}>
+                        <Link onClick={logout} ref={logoutRef}>
                             <i className="fa-solid fa-arrow-right-to-bracket"></i> Log out
                         </Link>
                     </div>

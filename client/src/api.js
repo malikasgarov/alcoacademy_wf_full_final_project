@@ -120,7 +120,15 @@ export const getEnglish = async () => {
     }
 };
 
-//------------------ H E L P --------------------\\
+//------------------ M E S S A G E S --------------------\\
+export const getMessages = async () => {
+    try {
+        const response = await api.get('/messages');
+        return response.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
 
 export const contactMess = async (username, email, contactmessage)=>{
     try{

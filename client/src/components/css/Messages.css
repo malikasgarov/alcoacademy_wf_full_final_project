@@ -1,0 +1,16 @@
+div.messageHolder{
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+div.messageContainer{
+    background-color: #1D4645;
+    text-align: center;
+    color: white;
+    border-radius: 4px;
+    a{
+        text-decoration: none;
+        color: white;
+    }
+}

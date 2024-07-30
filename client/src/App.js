@@ -12,6 +12,8 @@ import Programming from "./components/Programming.js";
 import History from "./components/History.js"
 import Resultsforusername from './components/Resultsforusername.js';
 import English from "./components/English.js";
+import Messages from './components/Messages.js';
+import Message from './components/Message.js';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path='/history' element={<History />}></Route>
         <Route path='/english' element={<English />}></Route>
         <Route path='/resultsforusername/:namee' element={<Resultsforusername />}></Route>
+        <Route path='/messages' element={<Messages />}></Route>
+        <Route path='/messages/:id' element={<Message />}></Route>
       </Routes>
     </BrowserRouter>
   );
