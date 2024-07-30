@@ -116,11 +116,12 @@ div.lefticon{
 div.profile{
     cursor: pointer;
 }
-.profile-dropdown {
+div.profile-dropdown {
     display: none;
     position: absolute;
     top: 55px;
-    left: 75%;
+    flex-direction: column;
+
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -129,7 +130,7 @@ div.profile{
 }
 
 .profile-dropdown.active {
-    display: block;
+    display: flex;
 }
 
 .profile-dropdown a {
