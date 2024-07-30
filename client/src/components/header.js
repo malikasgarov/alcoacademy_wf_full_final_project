@@ -27,10 +27,7 @@ function Home() {
         setProfileDropdownActive(!profileDropdownActive);
     }
 
-    function toggleDropdowns() {
-        toggleProfileDropdown();
-        toggleDropdown();
-    }
+
 
     function logout() {
         setDropdownActive(false);
@@ -113,7 +110,7 @@ function Home() {
                     <Link className='login' to="/login" id='login' ref={loginRef} onClick={closeDropdown}>
                         <i className="fa-solid fa-arrow-right-to-bracket"></i> Log in
                     </Link>
-                    <div className='bars' onClick={toggleDropdowns}>
+                    <div className='bars' onClick={toggleDropdown}>
                         <i className="fa-solid fa-bars"></i>
                     </div>
                 </div>

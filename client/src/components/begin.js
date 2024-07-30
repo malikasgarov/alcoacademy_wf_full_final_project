@@ -1,4 +1,4 @@
-import "./css/begin.css";
+import "./css/Begin.css";
 import React from "react";
 import beginfoto from './img/Group 338.svg';
 import { Link } from 'react-router-dom';

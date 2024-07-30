@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./css/Register.css";
-import Header from "./Header"
+import Header from "./Header";
 import { registerUser } from "../api";
 import { useState } from "react";
 
