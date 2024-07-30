@@ -2,3 +2,17 @@ div.messageDetails{
     margin-top: 89px;
     text-align: center;
 }
+button.deletebutton{
+    padding: 8px 16px;
+    margin-top: 8px;
+    background-color: white;
+    border: 1px solid #1D4645;
+    color: #1D4645;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+button.deletebutton{
+    background-color: #1D4645;
+    color: white;
+}

@@ -78,15 +78,15 @@ export const postResults = async (result, username, subject, date) => {
         throw error.response ? error.response.data : error;
     }
 };
-export const deleteUser = async (username) => {
-    try {
-        const response = await api.delete(`/delete-account/${username}`);
-        return response.data;
-    } catch (error) {
-        console.error("Error deleting account", error.response ? error.response.data : error.message);
-        throw error.response ? error.response.data : error;
-    }
-};
+// export const deleteUser = async (username) => {
+//     try {
+//         const response = await api.delete(`/delete-account/${username}`);
+//         return response.data;
+//     } catch (error) {
+//         console.error("Error deleting account", error.response ? error.response.data : error.message);
+//         throw error.response ? error.response.data : error;
+//     }
+// };
 export const getMath = async () => {
     try {
         const response = await api.get('/math');
@@ -129,7 +129,6 @@ export const getMessages = async () => {
         throw error.response.data;
     }
 };
-
 export const contactMess = async (username, email, contactmessage)=>{
     try{
         const response = await api.post('/contact', {username, email, contactmessage});
@@ -138,5 +137,4 @@ export const contactMess = async (username, email, contactmessage)=>{
             throw error.response.data;
     }
 }
-
 

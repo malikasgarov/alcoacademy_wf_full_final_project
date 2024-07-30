@@ -234,6 +234,36 @@ app.get("/api/messages", async (req, res) => {
         res.status(400).json({ error: "Failed to fetch messages" });
     }
 });
+const deleteMessage = async (identifier) => {
+    try {
+        const result = await Contact.deleteOne({ _id: identifier });
+        if (result.deletedCount === 1) {
+            console.log('message deleted successfully.');
+            return { success: true, message: 'message deleted successfully.' };
+        } else {
+            console.log('message not found.');
+            return { success: false, message: 'message not found.' };
+        }
+    } catch (err) {
+        console.error('Error deleting message:', err);
+        return { success: false, message: 'Error deleting message.' };
+    }
+};
+app.delete('/delete-message/:id', async (req, res) => {
+    const messageId = req.params.id;
+    try {
+        const result = await deleteMessage(messageId);
+        if (result.success) {
+            res.status(200).json({ message: "Deleted successfully" });
+        } else {
+            res.status(404).json({ message: "Unable to delete" });
+        }
+    } catch (error) {
+        console.error("Error deleting message:", error);
+        res.status(500).json({ message: "Server error" });
+    }
+});
+
 // ----------------------/ C O N T A C T \ ------------------------\\
 
 // ------------------  L I S T E N - S E R V E R  ------------------ \\
